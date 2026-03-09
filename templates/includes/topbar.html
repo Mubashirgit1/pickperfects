@@ -1,0 +1,56 @@
+<div class="row gx-0 align-items-center">
+    <div class="col-lg-4 text-center text-lg-start mb-lg-0">
+        <div class="d-inline-flex align-items-center" style="height: 45px;">
+            <a href="#" class="text-muted me-2"> Help</a><small> / </small>
+            <a href="#" class="text-muted mx-2"> Support</a><small> / </small>
+            <a href="#" class="text-muted ms-2"> Contact</a>
+
+        </div>
+    </div>
+    <div class="col-lg-4 text-center d-flex align-items-center justify-content-center">
+        <small class="text-dark">Call Us:</small>
+        <a href="#" class="text-muted">(+44) 07871818775</a>
+    </div>
+
+    <div class="col-lg-4 text-center text-lg-end">
+        <div class="d-inline-flex align-items-center" style="height: 45px;">
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle text-muted me-2" data-bs-toggle="dropdown"><small>
+                        USD</small></a>
+                <div class="dropdown-menu rounded">
+                    <a href="#" class="dropdown-item"> Euro</a>
+                    <a href="#" class="dropdown-item"> Dolar</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle text-muted mx-2" data-bs-toggle="dropdown"><small>
+                        English</small></a>
+                <div class="dropdown-menu rounded">
+                    <a href="#" class="dropdown-item"> English</a>
+                    <a href="#" class="dropdown-item"> Turkish</a>
+                    <a href="#" class="dropdown-item"> Spanol</a>
+                    <a href="#" class="dropdown-item"> Italiano</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle text-muted ms-2" data-bs-toggle="dropdown"><small><i
+                            class="fa fa-home me-2"></i> My Profile</small></a>
+                <div class="dropdown-menu rounded">
+                    {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                    <a href="" class="dropdown-item">Product Management</a>
+                    {% endif %}
+                    <a href="#" class="dropdown-item"> Wishlist</a>
+                    <a href="#" class="dropdown-item"> My Card</a>
+                    <a href="#" class="dropdown-item"> My Account</a>
+                    <a href="{% url 'account_logout' %}" class="dropdown-item"> Log Out</a>
+
+                    {% else %}
+                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
