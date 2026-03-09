@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites', #required for allauth
+    'allauth',
+    'allauth.account',
+    # Optional -- requires install using `django-allauth[socialaccount]`.
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -59,16 +64,31 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',
+                'django.template.context_processors.request', #required for allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
     },
 ]
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by email
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
 
 WSGI_APPLICATION = 'pickperfect.wsgi.application'
 
+SITE_ID = 1
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' #required for allauth
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email' #required for allauth
+ACCOUNT_EMAIL_REQUIRED = True #required for allauth
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory' #required for allauth
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True #optional -- default is False
+ACCOUNT_USERNAME_MIN_LENGTH = 4 #optional -- default is 1
+LOGIN_URL ='/accounts/login/' #optional -- default is /accounts/login/
+LOGIN_REDIRECT_URL = '/success/' #optional -- default is /
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
