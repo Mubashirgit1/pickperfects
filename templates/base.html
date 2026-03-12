@@ -88,6 +88,10 @@
             {% include 'includes/navbar.html' %}
         </div>        
     {% endblock %}
+    {% if request.path != '/' %}
+        {% include 'includes/breadcrumbs.html' %}
+        {% include 'includes/service.html' %}
+    {% endif %}
 
     {% block content %}
 
