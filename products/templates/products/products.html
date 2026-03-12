@@ -287,12 +287,12 @@
                                                     <img src="{% static '/img/product-3.png' %}" class="img-fluid w-100 rounded-top" alt="">
                                                     {% endif %}
                                                     <div class="product-details">
-                                                        <a href="#"><i class="fa fa-eye fa-1x"></i></a>
+                                                        <a href="{% url 'product_detail' product.id %}"><i class="fa fa-eye fa-1x"></i></a>
                                                     </div>
                                                 </div>
                                                 <div class="text-center rounded-bottom p-4">
                                                     <a href="#" class="d-block mb-2">{{ product.category.friendly_name }}</a>
-                                                    <a href="#" class="d-block h4">{{ product.name }} <br> {{product.sku}}</a>
+                                                    <a href="{% url 'product_detail' product.id %}" class="d-block h4">{{ product.name }} <br> {{product.sku}}</a>
                                                     <span class="text-primary fs-5">${{ product.price|floatformat:"2" }}</span>
                                                 </div>
                                             </div>
