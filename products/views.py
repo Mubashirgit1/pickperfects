@@ -1,6 +1,6 @@
 from django.shortcuts import render,get_object_or_404,redirect, reverse
 from django.core.paginator import Paginator
-from .models import Product
+from .models import Product,Category
 from django.db.models import Q
 from django.contrib import messages
 # Create your views here.
@@ -10,26 +10,50 @@ def all_products(request):
 
     products = Product.objects.all()
     query = None
-
+    categories = None
+    tags = None
+    current_tags =None
     if request.GET:
+        if 'category' in request.GET:
+            categories = request.GET.getlist('category')
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
                 messages.error(request, "You didn't enter any search criteria!")
-                return redirect(reverse('products'))
-            
-            queries = Q(name__icontains=query) | Q(description__icontains=query) | Q(category__friendly_name__icontains=query) | Q(sku__icontains=query) | Q(tags__icontains=query) | Q(occasion__icontains=query) | Q(recipient__icontains=query) | Q(tags__icontains=query) | Q(occasion__icontains=query)      
+                return redirect(reverse('products'))           
+            queries = Q(name__icontains=query) | Q(description__icontains=query) | Q(category__friendly_name__icontains=query) | Q(sku__icontains=query) | Q(tags__icontains=query) | Q(occasion__icontains=query) | Q(recipient__icontains=query)      
             products = products.filter(queries)
-    
-            # Paginate products - 15 per page
-            paginator = Paginator(products, 15)
-            page_number = request.GET.get('page')
-            page_obj = paginator.get_page(page_number)
+        if 'tags' in request.GET:
+            tags = request.GET.getlist('tags')
+            current_tags = tags
+            tag_queries = Q()
+            for tag in tags:
+                tag_queries |= Q(tags__icontains=tag)
+            products = products.filter(tag_queries)
+        if 'max_price' in request.GET:
+            max_price = request.GET.get('max_price')
+            if max_price and max_price.isdigit():
+                products = products.filter(price__lte=int(max_price))
+            
+        # Paginate products - 15 per page
+    paginator = Paginator(products, 15)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+
+    query_params = request.GET.copy()
+    query_params.pop('page', None)
+
 
 
     context = {
         'page_obj': page_obj,
         'products': page_obj.object_list,
+        'current_categories': categories,
+        'current_tags': current_tags,
+        'query_params': query_params.urlencode(),
     }
 
     return render(request, 'products/products.html', context)

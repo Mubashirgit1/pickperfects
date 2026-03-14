@@ -72,6 +72,8 @@ TEMPLATES = [
                 'django.template.context_processors.request', #required for allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'pickperfect.context_processors.nav_categories',
+                'pickperfect.context_processors.global_tags',
             ],
         },
     },

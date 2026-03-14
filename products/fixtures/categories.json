@@ -7,5 +7,5 @@
   {"pk": 6, "model": "products.category", "fields": {"name": "fashion_accessories", "friendly_name": "Fashion & Accessories"}},
   {"pk": 7, "model": "products.category", "fields": {"name": "food_drink", "friendly_name": "Food & Drink"}},
   {"pk": 8, "model": "products.category", "fields": {"name": "experience_gifts", "friendly_name": "Experience Gifts"}},
-  {"pk": 9, "model": "products.category", "fields": {"name": "fashion_accessories", "friendly_name": "Fashion & Accessories"}}
+  {"pk": 9, "model": "products.category", "fields": {"name": "lifestyle_gifts", "friendly_name": "Lifestyle Gifts"}}
 ]
