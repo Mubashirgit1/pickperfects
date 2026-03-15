@@ -36,8 +36,22 @@ def all_products(request):
             max_price = request.GET.get('max_price')
             if max_price and max_price.isdigit():
                 products = products.filter(price__lte=int(max_price))
-            
-        # Paginate products - 15 per page
+    
+    # Sorting
+    sort_by = request.GET.get('sort')
+    if sort_by == 'high_rating':
+        products = products.order_by('-rating')
+    elif sort_by == 'low_rating':
+        products = products.order_by('rating')
+    elif sort_by == 'average_rating':
+        products = products.order_by('-rating')  # assuming average is high rating
+    elif sort_by == 'new_desc':
+        products = products.order_by('-id')  # assuming id for newness
+    elif sort_by == 'new_asc':
+        products = products.order_by('id')
+    # else default, no order_by
+    
+            # Paginate products - 15 per page
     paginator = Paginator(products, 15)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
