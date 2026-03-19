@@ -32,6 +32,14 @@ def all_products(request):
             for tag in tags:
                 tag_queries |= Q(tags__icontains=tag)
             products = products.filter(tag_queries)
+        if 'occasion' in request.GET:
+            occasions = request.GET.getlist('occasion')
+            current_occasions = occasions
+            occasion_queries = Q()
+            for occasion in occasions:
+                occasion_queries |= Q(occasion__icontains=occasion)
+            products = products.filter(occasion_queries)
+
         if 'max_price' in request.GET:
             max_price = request.GET.get('max_price')
             if max_price and max_price.isdigit():
@@ -68,7 +76,7 @@ def all_products(request):
         'current_categories': categories,
         'current_tags': current_tags,
         'query_params': query_params.urlencode(),
-    }
+    } 
 
     return render(request, 'products/products.html', context)
 

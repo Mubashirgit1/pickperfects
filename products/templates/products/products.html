@@ -85,7 +85,15 @@
                             {% endfor %}
                         </div>
                     </div>
-                                        <div class="featured-product mb-4">
+                    <div class="product-tags py-4">
+                        <h4 class="mb-3">Occasions</h4>
+                        <div class="product-tags-items bg-light rounded p-3">
+                            {% for occasion in global_occasions %}
+                                <a href="{% url 'products' %}?occasions={{ occasion }}" class="border rounded py-1 px-2 mb-2 {% if current_occasions and occasion in current_occasions %}text-white{% endif %}" {% if current_occasions and occasion in current_occasions %}style="background-color: #f28b00;"{% endif %}>{{ occasion|title }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="featured-product mb-4">
                         <h4 class="mb-3">Featured products</h4>
                         <div class="featured-product-item">
                             <div class="rounded me-4" style="width: 100px; height: 100px;">
