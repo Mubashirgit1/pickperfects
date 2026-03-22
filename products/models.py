@@ -8,6 +8,7 @@ class Category(models.Model):
 
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
+    icon = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):
         return self.name

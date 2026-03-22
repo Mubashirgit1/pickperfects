@@ -43,7 +43,7 @@
                             {% for category in nav_categories %}
                                 <li>
                                     <div class="categories-item">
-                                        <a href="{% url 'products' %}?category={{ category.name }}" class="text-dark"><i class="fas fa-apple-alt text-secondary me-2"></i>{{ category.friendly_name }}</a>
+                                        <a href="{% url 'products' %}?category={{ category.name }}" class="text-dark"><i class="{% if category.icon %}{{ category.icon }}{% else %}fas fa-apple-alt{% endif %} text-secondary me-2"></i>{{ category.friendly_name }}</a>
                                         <span>({{ category.product_count }})</span>
                                     </div>
                                 </li>

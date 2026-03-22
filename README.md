@@ -202,13 +202,24 @@ During the development and deployment of **Pick Perfect**, several technical iss
 
 ---
 
-### ✅ 1. Input Validation on Search Page
+### ✅ 1. Search Filter Queries
 **Issue:**  
 
 Search Filter Queries
 
 **Fix:**  
 
+**Result:**  
+
+---
+
+### ✅ 1. Featured Products Query
+**Issue:**  
+
+Fetching Featured product error on contains
+
+**Fix:**  
+ 
 **Result:**  
 
 ---
