@@ -13,6 +13,8 @@ def all_products(request):
     categories = None
     tags = None
     current_tags =None
+    current_occasions = None
+    f_products = None
     if request.GET:
         if 'category' in request.GET:
             categories = request.GET.getlist('category')
@@ -67,6 +69,9 @@ def all_products(request):
 
     query_params = request.GET.copy()
     query_params.pop('page', None)
+    
+    f_queries = Q(tags__icontains='"featured"')
+    f_products = Product.objects.filter(f_queries)
 
 
 
@@ -75,7 +80,9 @@ def all_products(request):
         'products': page_obj.object_list,
         'current_categories': categories,
         'current_tags': current_tags,
+        'current_occasions': current_occasions,
         'query_params': query_params.urlencode(),
+        'f_products': f_products,
     } 
 
     return render(request, 'products/products.html', context)
