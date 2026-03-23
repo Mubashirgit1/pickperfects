@@ -20,5 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')), #required for allauth
     path('products/', include('products.urls')),
+    path('bag/', include('bag.urls')),
     path('', include('home.urls')),
 ]

@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     # Optional -- requires install using `django-allauth[socialaccount]`.
     'allauth.socialaccount',
     'home',
-    'products'
+    'products',
+    'bag',
 ]
 
 MIDDLEWARE = [
@@ -74,6 +75,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'pickperfect.context_processors.nav_categories',
                 'pickperfect.context_processors.global_tags',
+                'bag.contexts.bag_contents',
             ],
         },
     },
@@ -155,3 +157,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+FREE_DELIVERY_THRESHOLD = 50
+STANDARD_DELIVERY_PERCENTAGE = 10
+CURRENCY = '£'
+RETURN_DAYS = '30 Days'
