@@ -93,24 +93,29 @@
                                 <!-- <small>Available: <strong class="text-primary">20 items in stock</strong></small> -->
                             </div>
                             <p class="mb-4">{{ product.description }}</p>
-                            
+                       <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                        {% csrf_token %}
                             <div class="input-group quantity mb-5" style="width: 100px;">
                                 <div class="input-group-btn">
                                     <button class="btn btn-sm btn-minus rounded-circle bg-light border">
                                         <i class="fa fa-minus"></i>
                                     </button>
                                 </div>
-                                <input type="text" class="form-control form-control-sm text-center border-0" value="1">
+                                <input type="number" name="quantity" class="form-control form-control-sm text-center border-0 qty_input" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
                                 <div class="input-group-btn">
                                     <button class="btn btn-sm btn-plus rounded-circle bg-light border">
                                         <i class="fa fa-plus"></i>
                                     </button>
                                 </div>
                             </div>
-                            <a href="#"
+
+                            <button type="submit"
                                 class="btn btn-primary border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"><i
-                                    class="fa fa-shopping-bag me-2 text-white"></i> Add to cart</a>
+                                    class="fa fa-shopping-bag me-2 text-white"></i> Add to cart</button>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </form>
                         </div>
+
                         <div class="col-lg-12">
                             <nav>
                                 <div class="nav nav-tabs mb-3">
