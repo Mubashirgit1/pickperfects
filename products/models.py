@@ -48,5 +48,28 @@ class Product(models.Model):
     occasion = models.JSONField(null=True, blank=True)
     recipient = models.CharField(max_length=50, null=True, blank=True)
 
+    def get_sale_percentage(self):
+        if not self.tags:
+            return None
+
+        for tag in self.tags:
+            if isinstance(tag, (int, float)):
+                return int(tag)
+            if isinstance(tag, str):
+                raw = tag.strip().replace('%', '')
+                if raw.isdigit():
+                    return int(raw)
+
+        return None
+
+    def get_discounted_price(self):
+        sale_pct = self.get_sale_percentage()
+        if sale_pct is None or sale_pct <= 0:
+            return self.price
+
+        from decimal import Decimal
+        discount = (Decimal(sale_pct) / Decimal(100)) * self.price
+        return (self.price - discount).quantize(Decimal('0.01'))
+
     def __str__(self):
         return self.name
