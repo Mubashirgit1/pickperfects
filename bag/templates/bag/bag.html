@@ -43,7 +43,7 @@
                                 <p class="my-0"><strong>Size: </strong>{% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
                             </td>
                             <td>
-                                <p class="mb-0 py-4">{{ item.product.price }}{{currency}}</p>
+                                <p class="mb-0 py-4">{{currency}}{{ item.product.price }}</p>
                             </td>
                             <td>
                             <form method="POST" class="form update-form mb-0 py-4" action="{% url 'adjust_bag' item.item_id %}">
@@ -76,14 +76,14 @@
                              
                             </td>
                             <td>
-                                <p class="mb-0 py-4">{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                                <p class="mb-0 py-4">{{currency}}{{ item.product.price | calc_subtotal:item.quantity }}</p>
                             </td>
                             <td class="py-4">
                                 <button class="btn btn-md rounded-circle bg-light border  remove-item" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}">
                                     <i class="fa fa-times text-danger"></i>
                                 </button>
                                 <button class="btn btn-md rounded-circle bg-light border update-link">
-                                    <i class="fa fa-edit text-info"></i>    
+                                    <i class="fa fa-cart-plus text-info"></i>    
                                 </button>
                                 
                             </td>

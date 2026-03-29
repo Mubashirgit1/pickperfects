@@ -63,7 +63,21 @@
     <header class="container-fluid fixed-top"></header>
 
     {% if messages %}
-        <div class="message-container"></div>
+        <div class="message-container">
+            {% for message in messages %}
+                {% if message.tags == 'success' %}
+                    {% include 'includes/toasts/toast_success.html' %}
+                {% elif message.tags == 'error' %}
+                    {% include 'includes/toasts/toast_error.html' %}
+                {% elif message.tags == 'warning' %}
+                    {% include 'includes/toasts/toast_warning.html' %}
+                {% elif message.tags == 'info' %}
+                    {% include 'includes/toasts/toast_info.html' %}
+                {% else %}
+                    {% include 'includes/toasts/toast_info.html' %}
+                {% endif %}
+            {% endfor %}
+        </div>
     {% endif %}
 
     {% block spinner %}
@@ -115,7 +129,17 @@
 
     
     {% block postloadjs %}
-        
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function() {
+                var toastEls = document.querySelectorAll('.toast');
+                toastEls.forEach(function(toastEl) {
+                    new bootstrap.Toast(toastEl).show();
+                });
+            }, 100);
+        });
+   
+    </script>
     {% endblock %}
     
     {% block core_js %}
