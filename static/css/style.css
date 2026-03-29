@@ -297,6 +297,7 @@
 
 .custom-toast {
     overflow: visible;
+    position: relative;
 }
 
 .toast-capper {
@@ -315,11 +316,11 @@
 }
 
 .arrow-success {
-    border-bottom-color: #28a745;
+    border-bottom-color: #F28B00;
 }
 
 .arrow-danger {
-    border-bottom-color: #dc3545;
+    border-bottom-color: #F92400;
 }
 
 .arrow-warning {
