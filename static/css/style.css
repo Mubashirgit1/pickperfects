@@ -303,11 +303,15 @@
 .toast-capper {
     height: 2px;
 }
-
+.toast-header{
+    display: flex;
+        justify-content: space-between;
+        align-items: center
+}
 .arrow-up {
     position: absolute;
     top: -5px;
-    right: 50px;
+    right: 90px;
     width: 0;
     height: 0;
     border-left: 5px solid transparent;
