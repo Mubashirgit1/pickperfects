@@ -124,8 +124,8 @@
                                 You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
                             </p>
                         {% endif %}
-                        <button class="btn btn-primary rounded-pill px-4 py-3 text-uppercase mb-4 ms-4"
-                            type="button">Proceed Checkout</button>
+                        <a href="{% url 'checkout' %}" class="btn btn-primary rounded-pill px-4 py-3 text-uppercase mb-4 ms-4"
+                            type="button">Proceed Checkout</a>
                     </div>
                 </div>
             </div>

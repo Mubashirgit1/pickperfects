@@ -8,13 +8,12 @@
 
   <!-- Checkout Page Start -->
     <div class="container-fluid bg-light overflow-hidden py-5">
-        <div class="container py-5">
+        <div class="container py-3">
             <h1 class="mb-4 wow fadeInUp" data-wow-delay="0.1s">Billing details</h1>
-            <form action="#">
+                <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 <div class="row g-5">
                     <div class="col-md-12 col-lg-6 col-xl-6 wow fadeInUp" data-wow-delay="0.1s">
                         <p class="text-muted">Please fill out the form below to complete your order</p>
-                <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}
                         <div class="form-item">
                             <label class="form-label my-3">Full Name<sup>*</sup></label>
@@ -73,12 +72,7 @@
                         </div>
 
                     <div class="submit-button text-right mt-5 mb-2">                    
-						<button id="submit-button" class="btn btn-black rounded-0">
-							<span class="font-weight-bold">Complete Order</span>
-							<span class="icon">
-								<i class="fas fa-lock"></i>
-							</span>
-						</button>
+
 						<p class="small text-danger my-0">
 							<span class="icon">
 								<i class="fas fa-exclamation-circle"></i>
@@ -86,7 +80,6 @@
 							<span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
 						</p>
 					</div>
-                </form>
                     </div>
                     <div class="col-md-12 col-lg-6 col-xl-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="table-responsive">
@@ -104,7 +97,7 @@
                                     {% for item in bag_items %}
                                     <tr class="text-center">
                                         
-                                        <th class="text-start py-4">
+                                        <th class="text-start py-4" style="width: 150px;">
                                             <a href="{% url 'product_detail' item.product.id %}">
                                                 {% if item.product.image %}
                                                     <img class="w-50" src="{{ item.product.image.url }}" alt="{{ product.name }}">
@@ -113,10 +106,10 @@
                                                 {% endif %}
                                             </a>
                                         </th>
-                                        <td class="py-4 text-start">    <strong>{{ item.product.name }}</strong></td>
+                                        <td class="py-4 text-start"><strong>{{ item.product.name }}</strong></td>
                                         <td class="py-4">{% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</td>
                                         <td class="py-4 text-center">{{ item.quantity }}</td>
-                                        <td class="py-4">${{ item.product.price | calc_subtotal:item.quantity }}</td>
+                                        <td class="py-4">{{currency}}{{ item.product.price | calc_subtotal:item.quantity }}</td>
                                     </tr>
 
 
@@ -138,54 +131,42 @@
                                     <tr>
                                         <th scope="row">
                                         </th>
-                                        <td class="py-4"></td>
-                                        <td class="py-4"></td>
-                                        <td class="py-4">
-                                            <p class="mb-0 text-dark py-2">Subtotal</p>
+                                        <td></td>
+                                        <td></td>
+                                        <td >
+                                            <p class="mb-0 text-dark py-2">Order Total</p>
                                         </td>
-                                        <td class="py-4">
-                                            <div class="py-2 text-center border-bottom border-top">
-                                                <p class="mb-0 text-dark">$1134.00</p>
+                                        <td>
+                                            <div class="py-2 text-center">
+                                                <p class="mb-0 text-dark">{{currency}}{{ total | floatformat:2 }}</p>
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <th scope="row">
                                         </th>
-                                        <td class="py-4">
-                                            <p class="mb-0 text-dark py-4">Shipping</p>
+                                        <td ></td>
+                                        <td ></td>
+                                        <td >
+                                            <p class="mb-0 text-dark py-2">Delivery</p>
                                         </td>
-                                        <td colspan="3" class="py-4">
-                                            <div class="form-check text-start">
-                                                <input type="checkbox" class="form-check-input bg-primary border-0"
-                                                    id="Shipping-1" name="Shipping-1" value="Shipping">
-                                                <label class="form-check-label" for="Shipping-1">Free Shipping</label>
-                                            </div>
-                                            <div class="form-check text-start">
-                                                <input type="checkbox" class="form-check-input bg-primary border-0"
-                                                    id="Shipping-2" name="Shipping-1" value="Shipping">
-                                                <label class="form-check-label" for="Shipping-2">Flat rate:
-                                                    $15.00</label>
-                                            </div>
-                                            <div class="form-check text-start">
-                                                <input type="checkbox" class="form-check-input bg-primary border-0"
-                                                    id="Shipping-3" name="Shipping-1" value="Shipping">
-                                                <label class="form-check-label" for="Shipping-3">Local Pickup:
-                                                    $8.00</label>
+                                        <td >
+                                            <div class="py-2 text-center">
+                                                <p class="mb-0 text-dark">{{currency}}{{ delivery | floatformat:2 }}</p>
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr>
+                                                                        <tr>
                                         <th scope="row">
                                         </th>
-                                        <td class="py-4">
-                                            <p class="mb-0 text-dark text-uppercase py-2">TOTAL</p>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <p class="mb-0 text-dark py-2">Grand Total</p>
                                         </td>
-                                        <td class="py-4"></td>
-                                        <td class="py-4"></td>
-                                        <td class="py-4">
-                                            <div class="py-2 text-center border-bottom border-top">
-                                                <p class="mb-0 text-dark">$135.00</p>
+                                        <td >
+                                            <div class="py-2 text-center">
+                                                <p class="mb-0 text-dark">{{currency}}{{ grand_total | floatformat:2 }}</p>
                                             </div>
                                         </td>
                                     </tr>
@@ -232,7 +213,7 @@
                             </div>
                         </div>
                         <div class="row g-4 text-center align-items-center justify-content-center pt-4">
-                            <button type="button"
+                            <button type="button" id="submit-button"
                                 class="btn btn-primary border-secondary py-3 px-4 text-uppercase w-100 text-primary">Place
                                 Order</button>
                         </div>
