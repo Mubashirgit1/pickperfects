@@ -33,6 +33,15 @@
     position: relative;
     right: .5rem;
 }
+select, 
+select option {
+    color: #000000;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #aab7c4 !important;
+}
 
 #loading-overlay {
 	display: none;
@@ -56,4 +65,7 @@
   background: rgba(242, 139, 0, .85);
   color: white;
 
+}
+#id_country{
+  background-color: #fff;
 }

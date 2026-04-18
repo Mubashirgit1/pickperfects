@@ -29,18 +29,6 @@
                         {{ order_form.phone_number | as_crispy_field }}
                     </div>
                     <div class="form-item">
-                        <label class="form-label my-3">Country<sup>*</sup></label>
-                        {{ order_form.country | as_crispy_field }}
-                    </div>
-                    <div class="form-item">
-                        <label class="form-label my-3">Post Code<sup>*</sup></label>
-                        {{ order_form.postcode | as_crispy_field }}
-                    </div>
-                    <div class="form-item">
-                        <label class="form-label my-3">Town or City<sup>*</sup></label>
-                        {{ order_form.town_or_city | as_crispy_field }}
-                    </div>
-                    <div class="form-item">
                         <label class="form-label my-3">Street Address1<sup>*</sup></label>
                         {{ order_form.street_address1 | as_crispy_field }}
                     </div>
@@ -49,8 +37,20 @@
                         {{ order_form.street_address2 | as_crispy_field }}
                     </div>
                     <div class="form-item">
+                        <label class="form-label my-3">Town or City<sup>*</sup></label>
+                        {{ order_form.town_or_city | as_crispy_field }}
+                    </div>
+                    <div class="form-item">
+                        <label class="form-label my-3">Post Code<sup>*</sup></label>
+                        {{ order_form.postcode | as_crispy_field }}
+                    </div>
+                    <div class="form-item">
                         <label class="form-label my-3">County</label>
                         {{ order_form.county | as_crispy_field }}
+                    </div>
+                    <div class="form-item">
+                        <label class="form-label my-3">Country<sup>*</sup></label>
+                        {{ order_form.country | as_crispy_field }}
                     </div>
                     <div class="form-check my-3">
                         {% if user.is_authenticated %}
