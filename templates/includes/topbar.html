@@ -32,25 +32,27 @@
                     <a href="#" class="dropdown-item"> Italiano</a>
                 </div>
             </div>
+            {% if request.user.is_authenticated %}
             <div class="dropdown">
-                <a href="#" class="dropdown-toggle text-muted ms-2" data-bs-toggle="dropdown"><small><i
-                            class="fa fa-home me-2"></i> My Profile</small></a>
+                <a href="{% url 'profile'%}" class="dropdown-toggle text-muted ms-2" data-bs-toggle="dropdown"><small><i
+                            class="fa fa-home me-2"></i> My Account</small></a>
                 <div class="dropdown-menu rounded">
-                    {% if request.user.is_authenticated %}
+                    
                     {% if request.user.is_superuser %}
                     <a href="" class="dropdown-item">Product Management</a>
                     {% endif %}
                     <a href="#" class="dropdown-item"> Wishlist</a>
                     <a href="#" class="dropdown-item"> My Card</a>
-                    <a href="#" class="dropdown-item"> My Account</a>
+                    <a href="{% url 'profile'%}" class="dropdown-item"> My Account</a>
                     <a href="{% url 'account_logout' %}" class="dropdown-item"> Log Out</a>
 
                     {% else %}
-                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                    {% endif %}
+                    <a href="{% url 'account_signup' %}" class="dropdown-item text-muted px-2"><small>Register</small></a>
+                    <a href="{% url 'account_login' %}" class="dropdown-item text-muted px-2"><small>Login</small></a>
                 </div>
             </div>
+            {% endif %}
+            
         </div>
     </div>
 </div>

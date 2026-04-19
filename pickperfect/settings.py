@@ -115,7 +115,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory' #required for allauth
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True #optional -- default is False
 ACCOUNT_USERNAME_MIN_LENGTH = 4 #optional -- default is 1
 LOGIN_URL ='/accounts/login/' #optional -- default is /accounts/login/
-LOGIN_REDIRECT_URL = '/success/' #optional -- default is /
+LOGIN_REDIRECT_URL = '/' #optional -- default is /
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases

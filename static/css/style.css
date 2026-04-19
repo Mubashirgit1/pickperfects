@@ -954,6 +954,28 @@
 /*** Footer End ***/
 
 
+#id_login,#id_password,#id_email,#id_email2,#id_username,#id_password1,#id_password2{
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #919191;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 10px;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    height: calc(3.5rem + 2px);
+    padding: 1rem .75rem;
+    margin:15px;
+    margin-left: revert;
+}
+
 /*** copyright Start ***/
 .copyright {
     border-top: 1px solid rgba(255, 255, 255, 0.08);

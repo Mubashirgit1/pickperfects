@@ -1,21 +1,70 @@
-{% extends "account/base.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
-<h1>{% trans "Sign Up" %}</h1>
 
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+<div class="container py-5">
+    <div class="bg-light p-5 rounded">
 
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
+        <div class="text-center mb-5">
+            <h4 class="text-primary border-bottom border-primary border-2 d-inline-block pb-2">
+                Sign Up
+            </h4>
+            <p class="fs-5 text-dark">
+                Create your account to shop faster and stay updated.
+            </p>
+        </div>
+
+        <div class="row g-4 px-5">
+
+            <!-- Left Content -->
+            <div class="col-lg-6 p-3 px-5">
+                <h1 class="display-5 mb-3">Create Your Account</h1>
+                <p>
+                    Join us today! Sign up to track your orders, save your favorite items, and enjoy a faster, personalized shopping experience. Create your account to manage purchases and explore your wishlist with ease.
+                </p>
+                <p>
+                    {% blocktrans %}If you already have an account, then please
+                    <a href="{{ login_url }}">sign in</a> here.{% endblocktrans %}
+                </p>
+            </div>
+
+            <!-- Form -->
+            <div class="col-lg-6 p-5 rounded shadow">
+                 
+
+                <h2 class="text-center mb-3">{% trans "Sign Up" %}</h2>
+
+                <p class="text-center">
+                    {% blocktrans %}Already have an account? 
+                    <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
+                </p>
+
+                <form id="signup_form" method="post" action="{% url 'account_signup' %}">
+                    {% csrf_token %}
+
+                    {{ form|crispy }}
+
+                    {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
+                    {% endif %}
+
+                    <button class="btn btn-primary w-100 mt-3 py-3" type="submit">
+                        {% trans "Sign Up" %}
+                    </button>
+                </form>
+
+             
+            </div>
+
+        </div>
+    </div>
+</div>
+
+ 
+
 
 {% endblock %}
