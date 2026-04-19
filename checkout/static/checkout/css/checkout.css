@@ -69,3 +69,13 @@ select option[value=""] {
 #id_country{
   background-color: #fff;
 }
+
+#payment-form label[for="id_email"],
+#payment-form label[for="id_country"] {
+    margin: 10px 0;
+}
+
+#id_email {
+    margin: 0px;
+    height: calc(2.4rem + 2px);
+}
