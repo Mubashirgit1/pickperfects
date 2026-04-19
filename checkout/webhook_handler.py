@@ -2,7 +2,8 @@ from django.http import HttpResponse
 
 from .models import Order, OrderLineItem
 from products.models import Product
-
+from profiles.models import UserProfile
+from django.contrib.auth.models import User
 import json
 import time
 import stripe
@@ -26,10 +27,11 @@ class StripeWH_Handler:
         Handle the payment_intent.succeeded webhook from Stripe
         """
         intent = event.data.object
+        metadata = intent.metadata.to_dict()
         pid = intent.id
-        bag = intent.metadata.bag
-        save_info = intent.metadata.save_info
-       # Get the Charge object
+        bag = metadata.get('bag', '{}')
+        save_info = metadata.get('save_info')
+        # Get the Charge object
         stripe_charge = stripe.Charge.retrieve(
             intent.latest_charge
         )
@@ -37,10 +39,28 @@ class StripeWH_Handler:
         shipping_details = intent.shipping
         grand_total = round(stripe_charge.amount / 100, 2) # updated
         # Clean data in the shipping details
-        for field, value in shipping_details.address.items():
+        for field, value in shipping_details.address.to_dict().items():
             if value == "":
                 shipping_details.address[field] = None
 
+        # Update profile information if save_info was checked
+        profile = None
+        user_id = metadata.get('user_id')
+        if user_id:
+            try:
+                user = User.objects.get(id=int(user_id))
+                profile, _ = UserProfile.objects.get_or_create(user=user)
+            except (ValueError, User.DoesNotExist):
+                profile = None
+            if profile and save_info:
+                profile.default_phone_number = shipping_details.phone
+                profile.default_country = shipping_details.address.country
+                profile.default_postcode = shipping_details.address.postal_code
+                profile.default_town_or_city = shipping_details.address.city
+                profile.default_street_address1 = shipping_details.address.line1
+                profile.default_street_address2 = shipping_details.address.line2
+                profile.default_county = shipping_details.address.state
+                profile.save()
         order_exists = False
         attempt = 1
         while attempt <= 5:
@@ -73,6 +93,7 @@ class StripeWH_Handler:
             try:
                 order = Order.objects.create(
                     full_name=shipping_details.name,
+                    user_profile=profile,
                     email=billing_details.email,
                     phone_number=shipping_details.phone,
                     country=shipping_details.address.country,
