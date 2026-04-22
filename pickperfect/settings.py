@@ -30,7 +30,7 @@ BASE_DIR = SETTINGS_DIR.parent
 SECRET_KEY = 'django-insecure-g8v&h5u_y)4%!3^rq5@)%+)hkw7$64c6r_km&ckxf5nqp4qra^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
