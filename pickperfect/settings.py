@@ -35,6 +35,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
+    'https://pickperfect-2e4acff925d2.herokuapp.com/',
 ]
 
 
