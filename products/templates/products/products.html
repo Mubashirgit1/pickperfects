@@ -101,7 +101,7 @@
                         <div class="featured-product-item">
                             <div class="rounded me-4" style="width: 100px; height: 100px;">
                                 {% if product.image %}
-                                <img src="{{ product.image.url }}" class="img-fluid rounded" alt="Image">
+                                <img src="{{ product.image.url }}" class="img-fluid rounded" alt="Image" style="height: 455px !important;">
                                 {% else %}
                                 <img src="{% static 'img/no-image.jpg' %}" class="img-fluid w-100 rounded-top" alt="">
                                 {% endif %}
