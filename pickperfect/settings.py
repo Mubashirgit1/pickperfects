@@ -91,6 +91,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'pickperfect.context_processors.nav_categories',
                 'pickperfect.context_processors.global_tags',
+                'pickperfect.context_processors.breadcrumbs',
                 'bag.contexts.bag_contents',
             ],
             'builtins': [

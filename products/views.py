@@ -37,11 +37,15 @@ def all_products(request):
             for tag in tags:
                 tag_queries |= Q(tags__icontains=tag)
             products = products.filter(tag_queries)
+        occasion_keys = []
         if 'occasion' in request.GET:
-            occasions = request.GET.getlist('occasion')
-            current_occasions = occasions
+            occasion_keys += request.GET.getlist('occasion')
+        if 'occasions' in request.GET:
+            occasion_keys += request.GET.getlist('occasions')
+        if occasion_keys:
+            current_occasions = occasion_keys
             occasion_queries = Q()
-            for occasion in occasions:
+            for occasion in occasion_keys:
                 occasion_queries |= Q(occasion__icontains=occasion)
             products = products.filter(occasion_queries)
 
