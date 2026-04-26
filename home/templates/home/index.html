@@ -667,7 +667,7 @@ These customer favourites are perfect for gifting and every special occasion.</p
                         <div class="col-5">
                             <div class="products-mini-img border-end h-100">
                                 {% if product.image %}
-                                    <img src="{{ product.image.url }}" class="img-fluid w-100 h-100" style="object-fit: cover; height: 200px;">
+                                    <img src="{{ product.image.url }}" class="img-fluid w-100" style="object-fit: cover; height: 200px;">
                                 {% else %}
                                     <img src="{% static 'img/no-image.jpg' %}" class="img-fluid w-100 h-100">
                                 {% endif %}
@@ -679,7 +679,7 @@ These customer favourites are perfect for gifting and every special occasion.</p
 
                         <!-- Content -->
                         <div class="col-7">
-                            <div class="products-mini-content p-3">
+                            <div class="products-mini-content p-3 py-5">
                                 <small>{{ product.category.friendly_name }}</small>
                                 <h6>{{ product.name }}</h6>
                                 <small>{{ product.sku }}</small>
