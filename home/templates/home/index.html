@@ -125,7 +125,11 @@
             <div class="row g-4">
                 {% for product in sale_products %}
                     {% if forloop.counter <= 2 %}
-                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
+                    {% if forloop.counter <= 1 %}
+                        <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
+                    {% else %}
+                        <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+                    {% endif %}
                         <a href="{% url 'product_detail' product.id %}" class="d-flex align-items-center justify-content-between border bg-white rounded p-4">
                             <div>
                                 <p class="text-muted mb-3">Find The Best Sale Offer for You!</p>
@@ -520,35 +524,57 @@
     <!-- Product Banner Start -->
     <div class="container-fluid py-5">
         <div class="container">
+            {% if sale_products %}
             <div class="row g-4">
-                <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
-                    <a href="#">
-                        <div class="bg-primary rounded position-relative">
-                            <img src="img/product-banner.jpg" class="img-fluid w-100 rounded" alt="">
-                            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center rounded p-4"
-                                style="background: rgba(255, 255, 255, 0.5);">
-                                <h3 class="display-5 text-primary">EOS Rebel <br> <span>T7i Kit</span></h3>
-                                <p class="fs-4 text-muted">$899.99</p>
-                                <a href="#" class="btn btn-primary rounded-pill align-self-start py-2 px-4">Shop Now</a>
-                            </div>
+                {% for product in sale_products %}
+                    {% if forloop.counter >= 3 %}
+                        {% if forloop.counter >= 3 %}
+                            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
+                        {% else %}
+                            <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+                        {% endif %}
+                            <a href="{% url 'products' %}?tags=sale">
+                                <div class="bg-primary rounded position-relative">
+                                    {% if product.image %}
+                                    <img src="{{ product.image.url }}" class="img-fluid rounded" alt="Image">
+                                    {% else %}
+                                    <img src="{% static 'img/no-image.jpg' %}" class="img-fluid w-100 rounded" alt="">
+                                    {% endif %}
+                                    {% if forloop.counter >= 4 %}
+                                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center rounded p-4"
+                                            style="background: rgba(242, 139, 0, 0.5);">
+                                            <h2 class="display-2 text-secondary">SALE</h2>
+                                            {% with product.get_sale_percentage as sale_pct %}
+                                                {% if sale_pct %}
+                                                    <h4 class="display-5 text-white mb-4">Get UP To {{ sale_pct }}% Off</h4>
+                                                {% else %}
+                                                    <h4 class="display-5 text-white mb-4">Sale Offer</h4>
+                                                {% endif %}
+                                            {% endwith %}
+                                            <a href="{% url 'product_detail' product.id %}" class="btn btn-secondary rounded-pill align-self-center py-2 px-4">Shop
+                                                Now</a>
+                                        </div>
+                                    {% else %}
+                                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center rounded p-4"
+                                        style="background: rgba(255, 255, 255, 0.5);">
+                                        <h3 class="display-5 text-primary">{{ product.name }}<br> <span>{{product.sku}}</span></h3>
+                                        
+                                        <p class="fs-4 text-muted">{{currency}}{{ product.price|floatformat:"2" }}</p>
+
+                                        <a href="{% url 'product_detail' product.id %}" class="btn btn-primary rounded-pill align-self-start py-2 px-4">Shop Now</a>
+                                    </div>
+                                    {% endif %}
+                                    
+
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
-                    <a href="#">
-                        <div class="text-center bg-primary rounded position-relative">
-                            <img src="img/product-banner-2.jpg" class="img-fluid w-100" alt="">
-                            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center rounded p-4"
-                                style="background: rgba(242, 139, 0, 0.5);">
-                                <h2 class="display-2 text-secondary">SALE</h2>
-                                <h4 class="display-5 text-white mb-4">Get UP To 50% Off</h4>
-                                <a href="#" class="btn btn-secondary rounded-pill align-self-center py-2 px-4">Shop
-                                    Now</a>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                    {% endif %}
+                {% endfor %}
             </div>
+            {% else %}
+                <p class="text-center text-muted mb-0">No sale products available at the moment.</p>
+            {% endif %}    
         </div>
     </div>
     <!-- Product Banner End -->

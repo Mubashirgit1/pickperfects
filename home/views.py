@@ -12,7 +12,7 @@ def index(request):
     new_products = Product.objects.filter(tags__icontains='new').order_by('?')[:4]
     fetured_products = Product.objects.filter(tags__icontains='featured').order_by('?')[:4]
     top_rated_products = Product.objects.order_by('-rating')[:4]
-    sale_products = Product.objects.filter(tags__icontains='sale').order_by('?')[:2]
+    sale_products = Product.objects.filter(tags__icontains='sale').order_by('?')[:4]
     context = {
         'all_products': all_products,
         'new_products': new_products,
