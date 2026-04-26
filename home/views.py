@@ -23,9 +23,9 @@ def index(request):
     new_products = [p for p in products_list if 'new' in (p.tags or [])][:4]
     featured_products = [p for p in products_list if 'featured' in (p.tags or [])][:4]
     sale_products = [p for p in products_list if 'sale' in (p.tags or [])][:5]
-
+    
     # Top rated (still better via DB)
-    top_rated_products = base_qs.order_by('-rating')[:4]
+    top_rated_products = base_qs.order_by('-rating')[:6]
 
     context = {
         'all_products': all_products,
