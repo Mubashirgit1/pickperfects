@@ -2,11 +2,25 @@ from django.shortcuts import render
 from .forms import ContactForm
 from django.contrib import messages
 from django.shortcuts import render,redirect
+from products.models import Product
 
 # Create your views here.
 
 def index(request):
-    return render(request, 'home/index.html')
+
+    all_products = Product.objects.order_by('?')[:8]
+    new_products = Product.objects.filter(tags__icontains='new').order_by('?')[:4]
+    fetured_products = Product.objects.filter(tags__icontains='featured').order_by('?')[:4]
+    top_rated_products = Product.objects.order_by('-rating')[:4]
+    sale_products = Product.objects.filter(tags__icontains='sale').order_by('?')[:2]
+    context = {
+        'all_products': all_products,
+        'new_products': new_products,
+        'featured_products': fetured_products,
+        'top_rated_products': top_rated_products,
+        'sale_products': sale_products,
+    }
+    return render(request, 'home/index.html', context)
 
 def contact_view(request):
     """Handle the Contact Us form submission and display confirmation messages."""
