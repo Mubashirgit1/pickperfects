@@ -605,7 +605,7 @@
                         <div class="col-5">
                             <div class="products-mini-img border-end h-100">
                                 {% if product.image %}
-                                    <img src="{{ product.image.url }}" class="img-fluid w-100" style="object-fit: cover; ">
+                                    <img src="{{ product.image.url }}" class="img-fluid w-100" style="object-fit: cover; height: 230px !important;">
                                 {% else %}
                                     <img src="{% static 'img/no-image.jpg' %}" class="img-fluid w-100">
                                 {% endif %}
