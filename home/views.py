@@ -3,24 +3,43 @@ from .forms import ContactForm
 from django.contrib import messages
 from django.shortcuts import render,redirect
 from products.models import Product
-
+import random
 # Create your views here.
 
 def index(request):
+ # Get only needed fields + category (optimization)
+    base_qs = Product.objects.select_related('category').only(
+        'id', 'name', 'price', 'image', 'sku', 'rating', 'tags', 'category__friendly_name'
+    )
 
-    all_products = Product.objects.order_by('?')[:8]
-    new_products = Product.objects.filter(tags__icontains='new').order_by('?')[:4]
-    fetured_products = Product.objects.filter(tags__icontains='featured').order_by('?')[:4]
-    top_rated_products = Product.objects.order_by('-rating')[:4]
-    sale_products = Product.objects.filter(tags__icontains='sale').order_by('?')[:4]
+    # Convert to list once (avoids multiple DB hits)
+    products_list = list(base_qs)
+
+    # Random selection (faster than order_by('?'))
+    all_products = random.sample(products_list, min(len(products_list), 20))
+    grouped_products = chunk_products(all_products, 4)
+
+    # Filter in Python (since already loaded)
+    new_products = [p for p in products_list if 'new' in (p.tags or [])][:4]
+    featured_products = [p for p in products_list if 'featured' in (p.tags or [])][:4]
+    sale_products = [p for p in products_list if 'sale' in (p.tags or [])][:5]
+
+    # Top rated (still better via DB)
+    top_rated_products = base_qs.order_by('-rating')[:4]
+
     context = {
         'all_products': all_products,
+        'grouped_products': grouped_products,
         'new_products': new_products,
-        'featured_products': fetured_products,
+        'featured_products': featured_products,
         'top_rated_products': top_rated_products,
         'sale_products': sale_products,
     }
+
     return render(request, 'home/index.html', context)
+
+def chunk_products(products, chunk_size):
+    return [products[i:i + chunk_size] for i in range(0, len(products), chunk_size)]
 
 def contact_view(request):
     """Handle the Contact Us form submission and display confirmation messages."""
