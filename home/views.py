@@ -59,3 +59,6 @@ def contact_view(request):
     else:
         form = ContactForm()
     return render(request, 'home/contact.html', {'form': form})
+
+def custom_404(request, exception):
+    return render(request, 'home/404.html', status=404)

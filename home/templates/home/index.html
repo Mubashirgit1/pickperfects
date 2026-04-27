@@ -542,7 +542,7 @@
                             <a href="{% url 'products' %}?tags=sale">
                                 <div class="bg-primary rounded position-relative">
                                     {% if product.image %}
-                                    <img src="{{ product.image.url }}" class="img-fluid rounded" style="height: 520px;" alt="Image">
+                                    <img src="{{ product.image.url }}" class="img-fluid rounded" style="height: 520px; width: 417px;" alt="Image">
                                     {% else %}
                                     <img src="{% static 'img/no-image.jpg' %}" class="img-fluid w-100 rounded" alt="">
                                     {% endif %}
