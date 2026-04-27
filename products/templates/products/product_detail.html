@@ -83,10 +83,10 @@
                                 <span class="ms-3">({{ product.rating|floatformat:1 }} / 5)</span>
                             </div>
                             <div class="mb-3">
-                                <div class="btn btn-primary d-inline-block rounded text-white py-1 px-4 me-2"><i
+                                <div class="btn btn-primary d-inline-block rounded text-white py-1 px-4 me-2"><a class="text-white" href="https://www.facebook.com/sharer/sharer.php?u={% url 'product_detail' product.id %}" target="_blank"><i
                                         class="fab fa-facebook-f me-1"></i> Share</div>
-                                <div class="btn btn-secondary d-inline-block rounded text-white py-1 px-4 ms-2"><i
-                                        class="fab fa-twitter ms-1"></i> Share</div>
+                                <div class="btn btn-secondary d-inline-block rounded text-white py-1 px-4 ms-2"><a class="text-white" href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}&text={{ product.name }}" target="_blank"><i
+                                        class="fab fa-twitter ms-1"></i> Share</a></div>
                             </div>
                             <div class="d-flex flex-column mb-3">
                                 <small>Product SKU: {{ product.sku }}</small>
