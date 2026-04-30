@@ -13,7 +13,7 @@
                         <a href="{% url 'product_detail' product.id %}" class="d-flex align-items-center justify-content-between border bg-white rounded p-4">
                             <div>
                                 <p class="text-muted mb-3">Find The Best Sale Offer for You!</p>
-                                <h3 class="text-primary">{{ product.name }}</h3>
+                                <p class="text-primary fs-4">{{ product.name }}</p>
                                 {% with product.get_sale_percentage as sale_pct %}
                                     {% if sale_pct %}
                                         <h1 class="display-3 text-secondary mb-0">{{ sale_pct }}% <span class="text-primary fw-normal">Off</span></h1>
@@ -39,7 +39,7 @@
             <div class="row g-4">
                 <div class="col-lg-3 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="product-categories mb-4">
-                        <h4>Products Categories</h4>
+                        <p class="fs-3 fw-bold text-dark">Products Categories</p>
                         <ul class="list-unstyled">
                             {% for category in nav_categories %}
                                 <li>
@@ -52,7 +52,7 @@
                         </ul>
                     </div>
                     <div class="price mb-4">
-                        <h4 class="mb-2">Price</h4>
+                        <p class="mb-2 fs-4 fw-bold text-dark">Price</p>
                         <form method="GET" action="{% url 'products' %}">
                             {% for key, values in request.GET.lists %}
                                 {% if key != 'max_price' %}
@@ -71,29 +71,29 @@
                         <img src="{% static 'img/product-banner-2.jpg' %}" class="img-fluid w-100 rounded" alt="Image">
                         <div class="text-center position-absolute d-flex flex-column align-items-center justify-content-center rounded p-4"
                             style="width: 100%; height: 100%; top: 0; right: 0; background: rgba(242, 139, 0, 0.3);">
-                            <h5 class="display-6 text-primary">SALE</h5>
-                            <h4 class="text-secondary">Get UP To 50% Off</h4>
+                            <p class="display-6 text-primary">SALE</p>
+                            <p class="text-secondary fs-3">Get UP To 50% Off</p>
                             <a href="{% url 'products' %}?tags=sale" class="btn btn-primary rounded-pill px-4">Shop Now</a>
                         </div>
                     </div>
                     <div class="product-tags py-4">
-                        <h4 class="mb-3">PRODUCT TAGS</h4>
+                        <p class="mb-3 fs-3 fw-bold text-dark">PRODUCT TAGS</p>
                         <div class="product-tags-items bg-light rounded p-3">
                             {% for tag in global_tags %}
-                                <a href="{% url 'products' %}?tags={{ tag.value }}" class="border rounded py-1 px-2 mb-2 {% if current_tags and tag.value in current_tags %}text-white{% endif %}" {% if current_tags and tag.value in current_tags %}style="background-color: #f28b00;"{% endif %}>{{ tag.label|title }}</a>
+                                <a href="{% url 'products' %}?tags={{ tag.value|urlencode }}" class="border rounded py-1 px-2 mb-2 {% if current_tags and tag.value in current_tags %}text-white{% endif %}" {% if current_tags and tag.value in current_tags %}style="background-color: #f28b00;"{% endif %}>{{ tag.label|title }}</a>
                             {% endfor %}
                         </div>
                     </div>
                     <div class="product-tags py-4">
-                        <h4 class="mb-3">Occasions</h4>
+                        <p class="mb-3 fs-3 fw-bold text-dark">Occasions</p>
                         <div class="product-tags-items bg-light rounded p-3">
                             {% for occasion in global_occasions %}
-                                <a href="{% url 'products' %}?occasions={{ occasion }}" class="border rounded py-1 px-2 mb-2 {% if current_occasions and occasion in current_occasions %}text-white{% endif %}" {% if current_occasions and occasion in current_occasions %}style="background-color: #f28b00;"{% endif %}>{{ occasion|title }}</a>
+                                <a href="{% url 'products' %}?occasions={{ occasion|urlencode }}" class="border rounded py-1 px-2 mb-2 {% if current_occasions and occasion in current_occasions %}text-white{% endif %}" {% if current_occasions and occasion in current_occasions %}style="background-color: #f28b00;"{% endif %}>{{ occasion|title }}</a>
                             {% endfor %}
                         </div>
                     </div>
                     <div class="featured-product mb-4">
-                        <h4 class="mb-3">Featured products</h4>
+                        <p class="mb-3 fs-3 fw-bold text-dark">Featured products</p>
                         {% for product in f_products %}
 
                         <div class="featured-product-item">
@@ -105,7 +105,7 @@
                                 {% endif %}
                             </div>
                             <div>
-                                <h5 class="mb-2">{{ product.name }}</h5>
+                                <p class="mb-2 fs-4 fw-bold">{{ product.name }}</p>
                                 {% with product.rating|floatformat:0|add:0 as rating_round %}
                                     <div class="d-flex mb-2">
                                         {% for i in "12345" %}
@@ -118,7 +118,7 @@
                                     </div>
                                 {% endwith %}
                                 <div class="d-flex mb-2">
-                                    <h5 class="fw-bold me-2">${{ product.price|floatformat:2 }}</h5>
+                                    <p class="fw-bold me-2 fs-3 text-dark">${{ product.price|floatformat:2 }}</p>
                                 </div>
                             </div>
                         </div>
@@ -231,13 +231,13 @@
 
                                                     <div class="d-flex">
                                                         <a href="#"
-                                                            class="text-primary d-flex align-items-center justify-content-center me-3"><span
-                                                                class="rounded-circle btn-sm-square border"><i
-                                                                    class="fas fa-random"></i></a>
+                                                            class="text-primary d-flex align-items-center justify-content-center me-3">
+                                                            <span class="rounded-circle btn-sm-square border">
+                                                                <i class="fas fa-random"></i></span></a>
                                                         <a href="#"
                                                             class="text-primary d-flex align-items-center justify-content-center me-0"><span
-                                                                class="rounded-circle btn-sm-square border"><i
-                                                                    class="fas fa-heart"></i></a>
+                                                                class="rounded-circle btn-sm-square border">
+                                                                <i class="fas fa-heart"></i></span></a>
                                                     </div>
                                                 </div>
                                             </div>

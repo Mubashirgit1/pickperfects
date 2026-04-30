@@ -60,5 +60,15 @@ def contact_view(request):
         form = ContactForm()
     return render(request, 'home/contact.html', {'form': form})
 
+def newsletter_signup(request):
+    if request.method == 'POST':
+        email = request.POST.get('nl_email')
+        if email:
+            # Here you would typically save the email to your database or send it to your email marketing service
+            messages.success(request, "Thank you for signing up for our newsletter!", extra_tags='newsletter')
+        else:
+            messages.error(request, "Please enter a valid email address.")
+    return redirect('home')
+
 def custom_404(request, exception):
     return render(request, 'home/404.html', status=404)
