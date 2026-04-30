@@ -67,17 +67,15 @@
                             <button type="submit" class="btn btn-primary mt-2 w-100">Apply Price Filter</button>
                         </form>
                     </div>
-                    <a href="#">
-                        <div class="position-relative">
-                            <img src="{% static 'img/product-banner-2.jpg' %}" class="img-fluid w-100 rounded" alt="Image">
-                            <div class="text-center position-absolute d-flex flex-column align-items-center justify-content-center rounded p-4"
-                                style="width: 100%; height: 100%; top: 0; right: 0; background: rgba(242, 139, 0, 0.3);">
-                                <h5 class="display-6 text-primary">SALE</h5>
-                                <h4 class="text-secondary">Get UP To 50% Off</h4>
-                                <a href="{% url 'products' %}?tags=sale" class="btn btn-primary rounded-pill px-4">Shop Now</a>
-                            </div>
+                    <div class="position-relative">
+                        <img src="{% static 'img/product-banner-2.jpg' %}" class="img-fluid w-100 rounded" alt="Image">
+                        <div class="text-center position-absolute d-flex flex-column align-items-center justify-content-center rounded p-4"
+                            style="width: 100%; height: 100%; top: 0; right: 0; background: rgba(242, 139, 0, 0.3);">
+                            <h5 class="display-6 text-primary">SALE</h5>
+                            <h4 class="text-secondary">Get UP To 50% Off</h4>
+                            <a href="{% url 'products' %}?tags=sale" class="btn btn-primary rounded-pill px-4">Shop Now</a>
                         </div>
-                    </a>
+                    </div>
                     <div class="product-tags py-4">
                         <h4 class="mb-3">PRODUCT TAGS</h4>
                         <div class="product-tags-items bg-light rounded p-3">
