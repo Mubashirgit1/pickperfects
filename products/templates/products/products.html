@@ -63,7 +63,7 @@
                             {% endfor %}
                             <input type="range" class="form-range w-100" id="rangeInput" name="max_price" min="0" max="500"
                                 value="{{ request.GET.max_price|default:'500' }}" oninput="amount.value=rangeInput.value">
-                            <output id="amount" name="amount" min-value="0" max-value="500" for="rangeInput">{{ request.GET.max_price|default:'500' }}</output>
+                            <output id="amount" name="amount" for="rangeInput">{{ request.GET.max_price|default:'500' }}</output>
                             <button type="submit" class="btn btn-primary mt-2 w-100">Apply Price Filter</button>
                         </form>
                     </div>
@@ -107,7 +107,7 @@
                                 {% endif %}
                             </div>
                             <div>
-                                <h6 class="mb-2">{{ product.name }}</h6>
+                                <h5 class="mb-2">{{ product.name }}</h5>
                                 {% with product.rating|floatformat:0|add:0 as rating_round %}
                                     <div class="d-flex mb-2">
                                         {% for i in "12345" %}
@@ -235,7 +235,7 @@
                                                         <a href="#"
                                                             class="text-primary d-flex align-items-center justify-content-center me-3"><span
                                                                 class="rounded-circle btn-sm-square border"><i
-                                                                    class="fas fa-random"></i></i></a>
+                                                                    class="fas fa-random"></i></a>
                                                         <a href="#"
                                                             class="text-primary d-flex align-items-center justify-content-center me-0"><span
                                                                 class="rounded-circle btn-sm-square border"><i
