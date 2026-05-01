@@ -105,18 +105,18 @@
                         <div class="p-4">
                             <h2 class="display-6 mb-4">Cart <span class="fw-normal">Total</span></h2>
                             <div class="d-flex justify-content-between mb-4">
-                                <h5 class="mb-0 me-4">Subtotal:</h5>
+                                <p class="mb-0 me-4 fs-4">Subtotal:</p>
                                 <p class="mb-0">{{ currency }}{{ total|floatformat:2 }}</p>
                             </div>
                             <div class="d-flex justify-content-between">
-                                <h5 class="mb-0 me-4">Delivery:</h5>
+                                <p class="mb-0 me-4 text-dark fs-5 fw-bold">Delivery:</p>
                                 <div>
                                     <p class="mb-0">{{ delivery|floatformat:2 }}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="py-4 mb-4 border-top border-bottom d-flex justify-content-between">
-                            <h5 class="mb-0 ps-4 me-4">Grand Total</h5>
+                            <p class="mb-0 ps-4 me-4 fs-4 fw-bold text-dark">Grand Total</p>
                             <p class="mb-0 pe-4">{{ currency }}{{ grand_total|floatformat:2 }}</p>
                         </div>
                          {% if free_delivery_delta > 0 %}
@@ -125,7 +125,7 @@
                             </p>
                         {% endif %}
                         <a href="{% url 'checkout' %}" class="btn btn-primary rounded-pill px-4 py-3 text-uppercase mb-4 ms-4"
-                            type="button">Proceed Checkout</a>
+                            >Proceed Checkout</a>
                     </div>
                 </div>
             </div>

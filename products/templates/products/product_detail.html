@@ -82,8 +82,8 @@
                             </div>
                             <div class="mb-3">
                                 <div class="btn btn-primary d-inline-block rounded text-white py-1 px-4 me-2"><a class="text-white" href="https://www.facebook.com/sharer/sharer.php?u={% url 'product_detail' product.id %}" target="_blank"><i
-                                        class="fab fa-facebook-f me-1"></i> Share</div>
-                                <div class="btn btn-secondary d-inline-block rounded text-white py-1 px-4 ms-2"><a class="text-white" href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}&text={{ product.name }}" target="_blank"><i
+                                        class="fab fa-facebook-f me-1"></i> Share</a></div>
+                                <div class="btn btn-secondary d-inline-block rounded text-white py-1 px-4 ms-2"><a class="text-white" href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}&text={{ product.name|urlencode }} " target="_blank"><i
                                         class="fab fa-twitter ms-1"></i> Share</a></div>
                             </div>
                             <div class="d-flex flex-column mb-3">
@@ -148,9 +148,8 @@
                                 <div class="tab-pane active" id="nav-about" role="tabpanel"
                                     aria-labelledby="nav-about-tab">
                                     <p>{{ product.description }}</p>
-                                    </p>
                                     <b class="fw-bold">Occasions:</b>
-                                    <p class="small">
+                                    <div class="small">
                                         <div class="d-flex flex-wrap gap-2">
                                             {% for occ in product.occasion %}
                                                 <span class="badge bg-primary text-white px-3 py-2">
@@ -158,10 +157,9 @@
                                                 </span>
                                             {% endfor %}
                                         </div>
-                                    </p>
-                                    </p>
+                                    </div>
                                     <b class="fw-bold">Tags:</b>
-                                    <p class="small">
+                                    <div class="small">
                                         <div class="d-flex flex-wrap gap-2">
                                             {% for tag in product.tags %}
                                                 <span class="badge bg-primary text-white px-3 py-2">
@@ -169,9 +167,9 @@
                                                 </span>
                                             {% endfor %}
                                         </div>
-                                    </p>
+                                    </div>
                                     <b class="fw-bold">Receipients:</b>
-                                    <p class="small">
+                                    <div class="small">
                                         <div class="d-flex flex-wrap gap-2">
                                             {% for recipient in product.recipients %}
                                                 <span class="badge bg-primary text-white px-3 py-2">
@@ -179,7 +177,7 @@
                                                 </span>
                                             {% endfor %}
                                         </div>
-                                    </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -246,10 +244,10 @@
                                     <a href="#"
                                         class="text-primary d-flex align-items-center justify-content-center me-3"><span
                                             class="rounded-circle btn-sm-square border"><i
-                                                class="fas fa-random"></i></a>
+                                                class="fas fa-random"></i></span></a>
                                     <a href="#"
                                         class="text-primary d-flex align-items-center justify-content-center me-0"><span
-                                            class="rounded-circle btn-sm-square border"><i class="fas fa-heart"></i></a>
+                                            class="rounded-circle btn-sm-square border"><i class="fas fa-heart"></i></span></a>
                                 </div>
                             </div>
                         </div>
