@@ -12,7 +12,7 @@
                 <div class="header-carousel owl-carousel bg-light py-5">
                     <div class="row g-0 header-carousel-item align-items-center">
                         <div class="col-xl-6 carousel-img wow fadeInLeft" data-wow-delay="0.1s">
-                            <img src="{% static 'img/carousel-1.png' %}" class="img-fluid w-100" alt="Image">
+                            <img src="{% static 'img/carousel-1.png' %}" class="img-fluid w-100" alt="Image" width="500px" height="390px">
                         </div>
                         <div class="col-xl-6 carousel-content p-4">
                             <p class="text-uppercase fw-bold mb-4 wow fadeInRight fs-3 text-dark" data-wow-delay="0.1s"
@@ -26,7 +26,7 @@
                     </div>
                     <div class="row g-0 header-carousel-item align-items-center">
                         <div class="col-xl-6 carousel-img wow fadeInLeft" data-wow-delay="0.1s">
-                            <img src="{% static 'img/carousel-2.png' %}" class="img-fluid w-100" alt="Image">
+                            <img src="{% static 'img/carousel-2.png' %}" class="img-fluid" alt="Image"   width="500px" height="390px">
                         </div>
                         <div class="col-xl-6 carousel-content p-4">
                             <p class="text-uppercase fw-bold mb-4 wow fadeInRight fs-3 text-dark" data-wow-delay="0.1s"
@@ -143,9 +143,9 @@
                                 {% endwith %}
                             </div>
                             {% if product.image %}
-                            <img src="{{ product.image.url }}" class="img-fluid banner-img" alt="">
+                            <img src="{{ product.image.url }}" class="img-fluid" alt="" height="169px" width="145px">
                             {% else %}
-                            <img src="{% static 'img/no-image.jpg' %}"  class="img-fluid banner-img" alt="">
+                            <img src="{% static 'img/no-image.jpg' %}"  class="img-fluid" alt="" height="169px" width="145px">
                             {% endif %}
                         </a>
                     </div>
@@ -220,7 +220,7 @@
                                                     <div class="product-new">New</div>
                                                 {% endif %}
                                                 <div class="product-details">
-                                                    <a href="{% url 'product_detail' product.id %}"><i class="fa fa-eye fa-1x"></i></a>
+                                                    <a href="{% url 'product_detail' product.id %}" aria-label="View Deatails"><i class="fa fa-eye fa-1x"></i></a>
                                                 </div>
                                             </div>
                                             <div class="text-center rounded-bottom p-4">
@@ -266,7 +266,7 @@
                                                     <small class="text-muted ml-2">No Rating</small>
                                                 {% endif %}
                                                 <div class="d-flex">
-                                                    <a href="#"
+                                                    <!-- <a href="#"
                                                         class="text-primary d-flex align-items-center justify-content-center me-3">
                                                         <span class="rounded-circle btn-sm-square border">
                                                             <i class="fas fa-random"></i>
@@ -277,7 +277,7 @@
                                                         <span class="rounded-circle btn-sm-square border">
                                                             <i class="fas fa-heart"></i>
                                                         </span>
-                                                    </a>
+                                                    </a> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -303,7 +303,7 @@
                                                     <div class="product-new">New</div>
                                                 {% endif %}
                                                 <div class="product-details">
-                                                    <a href="{% url 'product_detail' product.id %}"><i class="fa fa-eye fa-1x"></i></a>
+                                                    <a href="{% url 'product_detail' product.id %}" aria-label="View Deatails"><i class="fa fa-eye fa-1x"></i></a>
                                                 </div>
                                             </div>
                                             <div class="text-center rounded-bottom p-4">
@@ -349,7 +349,7 @@
                                                     <small class="text-muted ml-2">No Rating</small>
                                                 {% endif %}
                                                 <div class="d-flex">
-                                                    <a href="#"
+                                                    <!-- <a href="#"
                                                         class="text-primary d-flex align-items-center justify-content-center me-3">
                                                         <span class="rounded-circle btn-sm-square border">
                                                             <i class="fas fa-random"></i>
@@ -360,7 +360,7 @@
                                                         <span class="rounded-circle btn-sm-square border">
                                                             <i class="fas fa-heart"></i>
                                                         </span>
-                                                    </a>
+                                                    </a> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -385,7 +385,7 @@
                                                     <div class="product-new">New</div>
                                                 {% endif %}
                                                 <div class="product-details">
-                                                    <a href="{% url 'product_detail' product.id %}"><i class="fa fa-eye fa-1x"></i></a>
+                                                    <a href="{% url 'product_detail' product.id %}" aria-label="View Deatails"><i class="fa fa-eye fa-1x"></i></a>
                                                 </div>
                                             </div>
                                             <div class="text-center rounded-bottom p-4">
@@ -431,7 +431,7 @@
                                                     <small class="text-muted ml-2">No Rating</small>
                                                 {% endif %}
                                                 <div class="d-flex">
-                                                    <a href="#"
+                                                    <!-- <a href="#"
                                                         class="text-primary d-flex align-items-center justify-content-center me-3">
                                                         <span class="rounded-circle btn-sm-square border">
                                                             <i class="fas fa-random"></i>
@@ -442,7 +442,7 @@
                                                         <span class="rounded-circle btn-sm-square border">
                                                             <i class="fas fa-heart"></i>
                                                         </span>
-                                                    </a>
+                                                    </a> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -468,7 +468,7 @@
                                                     <div class="product-new">New</div>
                                                 {% endif %}
                                                 <div class="product-details">
-                                                    <a href="{% url 'product_detail' product.id %}"><i class="fa fa-eye fa-1x"></i></a>
+                                                    <a href="{% url 'product_detail' product.id %}" aria-label="View Deatails"><i class="fa fa-eye fa-1x"></i></a>
                                                 </div>
                                             </div>
                                             <div class="text-center rounded-bottom p-4">
@@ -514,7 +514,7 @@
                                                     <small class="text-muted ml-2">No Rating</small>
                                                 {% endif %}
                                                 <div class="d-flex">
-                                                    <a href="#"
+                                                    <!-- <a href="#"
                                                         class="text-primary d-flex align-items-center justify-content-center me-3">
                                                         <span class="rounded-circle btn-sm-square border">
                                                             <i class="fas fa-random"></i>
@@ -525,7 +525,7 @@
                                                         <span class="rounded-circle btn-sm-square border">
                                                             <i class="fas fa-heart"></i>
                                                         </span>
-                                                    </a>
+                                                    </a> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -626,7 +626,7 @@
                                     <img src="{% static 'img/no-image.jpg' %}" class="img-fluid w-100" alt="{{ product.name }}">
                                 {% endif %}
                                 <div class="products-mini-icon rounded-circle bg-primary">
-                                    <a href="{% url 'product_detail' product.id %}"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                    <a href="{% url 'product_detail' product.id %}" aria-label="View Deatails"><i class="fa fa-eye fa-1x text-white"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -688,7 +688,7 @@ These customer favourites are perfect for gifting and every special occasion.</p
                                     <img src="{% static 'img/no-image.jpg' %}" class="img-fluid w-100 h-100" alt="{{ product.name }}">
                                 {% endif %}
                                 <div class="products-mini-icon rounded-circle bg-primary">
-                                    <a href="{% url 'product_detail' product.id %}"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                    <a href="{% url 'product_detail' product.id %}" aria-label="View Deatails"><i class="fa fa-eye fa-1x text-white"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -717,7 +717,7 @@ These customer favourites are perfect for gifting and every special occasion.</p
                             <a href="{% url 'product_detail' product.id %}" class="btn btn-primary border-secondary rounded-pill py-2 px-4"><i
                                     class="fas fa-shopping-cart me-2"></i> Details</a>
                             <div class="d-flex">
-                                <a href="#"
+                                <!-- <a href="#"
                                     class="text-primary d-flex align-items-center justify-content-center me-3">
                                     <span class="rounded-circle btn-sm-square border">
                                         <i class="fas fa-random"></i>
@@ -728,7 +728,7 @@ These customer favourites are perfect for gifting and every special occasion.</p
                                     <span class="rounded-circle btn-sm-square border">
                                         <i class="fas fa-heart"></i>
                                     </span>
-                                </a>
+                                </a> -->
                             </div>
                         </div>
                     </div>
