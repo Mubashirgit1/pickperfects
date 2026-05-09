@@ -12,7 +12,7 @@
                 <div class="header-carousel owl-carousel bg-light py-5">
                     <div class="row g-0 header-carousel-item align-items-center">
                         <div class="col-xl-6 carousel-img wow fadeInLeft" data-wow-delay="0.1s">
-                            <img src="{% static 'img/carousel-1.png' %}" class="img-fluid w-100" alt="Image" width="500px" height="390px">
+                            <img src="{% static 'img/carousel-1.png' %}"  alt="Events Gifts" width="500px" height="390px">
                         </div>
                         <div class="col-xl-6 carousel-content p-4">
                             <p class="text-uppercase fw-bold mb-4 wow fadeInRight fs-3 text-dark" data-wow-delay="0.1s"
@@ -26,7 +26,7 @@
                     </div>
                     <div class="row g-0 header-carousel-item align-items-center">
                         <div class="col-xl-6 carousel-img wow fadeInLeft" data-wow-delay="0.1s">
-                            <img src="{% static 'img/carousel-2.png' %}" class="img-fluid" alt="Image"   width="500px" height="390px">
+                            <img src="{% static 'img/carousel-2.png' %}"  alt="Gift Hampers"   width="500px" height="390px">
                         </div>
                         <div class="col-xl-6 carousel-content p-4">
                             <p class="text-uppercase fw-bold mb-4 wow fadeInRight fs-3 text-dark" data-wow-delay="0.1s"
@@ -220,7 +220,7 @@
                                                     <div class="product-new">New</div>
                                                 {% endif %}
                                                 <div class="product-details">
-                                                    <a href="{% url 'product_detail' product.id %}" aria-label="View Deatails"><i class="fa fa-eye fa-1x"></i></a>
+                                                    <a href="{% url 'product_detail' product.id %}" aria-label="View Deatails for {{ product.name }}"><i class="fa fa-eye fa-1x"></i></a>
                                                 </div>
                                             </div>
                                             <div class="text-center rounded-bottom p-4">
@@ -303,7 +303,7 @@
                                                     <div class="product-new">New</div>
                                                 {% endif %}
                                                 <div class="product-details">
-                                                    <a href="{% url 'product_detail' product.id %}" aria-label="View Deatails"><i class="fa fa-eye fa-1x"></i></a>
+                                                    <a href="{% url 'product_detail' product.id %}" aria-label="View Deatails for {{ product.name }}"><i class="fa fa-eye fa-1x"></i></a>
                                                 </div>
                                             </div>
                                             <div class="text-center rounded-bottom p-4">
@@ -385,7 +385,7 @@
                                                     <div class="product-new">New</div>
                                                 {% endif %}
                                                 <div class="product-details">
-                                                    <a href="{% url 'product_detail' product.id %}" aria-label="View Deatails"><i class="fa fa-eye fa-1x"></i></a>
+                                                    <a href="{% url 'product_detail' product.id %}" aria-label="View Deatails for {{ product.name }}"><i class="fa fa-eye fa-1x"></i></a>
                                                 </div>
                                             </div>
                                             <div class="text-center rounded-bottom p-4">
@@ -468,7 +468,7 @@
                                                     <div class="product-new">New</div>
                                                 {% endif %}
                                                 <div class="product-details">
-                                                    <a href="{% url 'product_detail' product.id %}" aria-label="View Deatails"><i class="fa fa-eye fa-1x"></i></a>
+                                                    <a href="{% url 'product_detail' product.id %}" aria-label="View Deatails for {{ product.name }}"><i class="fa fa-eye fa-1x"></i></a>
                                                 </div>
                                             </div>
                                             <div class="text-center rounded-bottom p-4">
@@ -626,7 +626,7 @@
                                     <img src="{% static 'img/no-image.jpg' %}" class="img-fluid w-100" alt="{{ product.name }}">
                                 {% endif %}
                                 <div class="products-mini-icon rounded-circle bg-primary">
-                                    <a href="{% url 'product_detail' product.id %}" aria-label="View Deatails"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                    <a href="{% url 'product_detail' product.id %}" aria-label="View Deatails for {{ product.name }}"><i class="fa fa-eye fa-1x text-white"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -688,7 +688,7 @@ These customer favourites are perfect for gifting and every special occasion.</p
                                     <img src="{% static 'img/no-image.jpg' %}" class="img-fluid w-100 h-100" alt="{{ product.name }}">
                                 {% endif %}
                                 <div class="products-mini-icon rounded-circle bg-primary">
-                                    <a href="{% url 'product_detail' product.id %}" aria-label="View Deatails"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                    <a href="{% url 'product_detail' product.id %}" aria-label="View Deatails for {{ product.name }}"><i class="fa fa-eye fa-1x text-white"></i></a>
                                 </div>
                             </div>
                         </div>
