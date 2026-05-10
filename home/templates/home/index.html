@@ -212,9 +212,10 @@
                                         <div class="product-item-inner border rounded">
                                             <div class="product-item-inner-item">
                                                 {% if product.image %}
-                                                <img src="{{ product.image.url }}" class="rounded-top" height="430px" width="304px" alt="">
+                                                <img src="{{ product.image.url }}" class="rounded-top" height="430px" width="304px" alt="{{ product.name }}">
+                                                 {% else %}
                                                 {% else %}
-                                                <img src="{% static 'img/no-image.jpg' %}" class="img-fluid w-100 rounded-top" height="430px" width="304px" alt="">
+                                                <img src="{% static 'img/no-image.jpg' %}" class="img-fluid w-100 rounded-top" height="430px" width="304px" alt="image not available">
                                                 {% endif %}
                                                 {% if "new" in product.tags %}
                                                     <div class="product-new">New</div>
