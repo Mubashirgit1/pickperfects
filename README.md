@@ -5,15 +5,13 @@ Pick Perfect is a full-featured eCommerce platform designed to help users find t
 
 ![Pick Perfect shown on a range of devices](/docs/mockup/mockup-all-framed.png)
 
-[View Pick Perfect on Heroku](https://pick-perfect-0b51f0f8267b.herokuapp.com/)
+[View Pick Perfect on Heroku](https://pickperfect-2e4acff925d2.herokuapp.com/)
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/Mubashirgit1/pickperfects?color=red)
 ![GitHub contributors](https://img.shields.io/github/contributors/Mubashirgit1/pickperfects?color=orange)
 ![GitHub language count](https://img.shields.io/github/languages/count/Mubashirgit1/pickperfects?color=yellow)
 ![GitHub top language](https://img.shields.io/github/languages/top/Mubashirgit1/pickperfects?color=green)
 ![W3C Validation](https://img.shields.io/w3c-validation/html?color=blueviolet&targetUrl=https%3A%2F%2Fpick-perfect-0b51f0f8267b.herokuapp.com%2F)
-![Python](https://img.shields.io/badge/Python-3.11-blue)
-![Django](https://img.shields.io/badge/Django-5.0-success)
 ![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blue)
 ![Heroku](https://img.shields.io/badge/Deployed-Heroku-purple)
 
@@ -83,39 +81,328 @@ The platform bridges the gap between gift-givers and recipients with an intuitiv
 
 ---
 
-## ✨ Features
+# PickPerfect – E-commerce Website
 
-### 🛍️ Shopping Features
-- ✅ Browse 20+ product categories (mugs, puzzles, speakers, tea gift boxes, etc.)
-- ✅ Dynamic product filtering (New, Featured, Sale, Top-Rated)
-- ✅ Advanced search functionality
-- ✅ Product detail pages with ratings and reviews
-- ✅ Shopping cart with persistent storage
-- ✅ Real-time cart updates
-- ✅ Checkout with order confirmation
+## 📌 Overview
 
-### 👤 User Management
-- ✅ User authentication (register, login, logout)
-- ✅ User profiles with order history
-- ✅ Address management
-- ✅ Saved preferences
+PickPerfect is a modern e-commerce platform designed to provide users with a fast, responsive, and seamless online shopping experience. Users can browse products, search intelligently, filter by categories, price, tags, occasions, and recipients, save favorite items, manage orders, and complete secure checkouts efficiently.
 
-### 🎨 UI/UX Components
-- ✅ Interactive product carousels (Owl Carousel)
-- ✅ Tabbed product navigation
-- ✅ Responsive Bootstrap grid layouts
-- ✅ Star rating system
-- ✅ Sale discount badges
-- ✅ Mobile-optimized design
-
-### 📊 Admin Features
-- ✅ Product management (CRUD)
-- ✅ Category organization
-- ✅ Order tracking
-- ✅ User management
-- ✅ Sales analytics
+The platform focuses on usability, accessibility, performance, and responsive design across all devices.
 
 ---
+
+# 🎯 User Experience (UX)
+
+## Initial Discussion
+
+As an online shopper,  
+I want to search, compare, and save products easily,  
+so that I can quickly find the best items for my needs and revisit them later without repeating searches.
+
+---
+
+# 👤 User Goals
+
+- Quickly search and compare products by category, keyword, SKU, price, recipient, or occasion
+- Save favorite products for future purchases
+- Access previous orders and account details easily
+- Enjoy a fast, interactive, and visually appealing shopping experience
+- Filter and sort products efficiently
+- Manage cart, quantities, colors, and sizes smoothly
+- Complete secure and user-friendly checkout processes
+
+---
+
+# 🧾 User Stories
+
+## 🔍 Product Search & Browsing
+
+### As a customer,
+I want to search products by name, SKU, or keywords,  
+so that I can quickly find relevant products.
+
+### As a shopper,
+I want to filter products by category, price, recipient, occasion, color, and size,  
+so that I can narrow down products that match my preferences.
+
+### As a user,
+I want to sort products by price, popularity, rating, and newest arrivals,  
+so that I can easily compare products.
+
+---
+
+## 🛍️ Product Management
+
+### As a customer,
+I want to view detailed product pages,  
+so that I can see product descriptions, images, prices, sizes, colors, and availability.
+
+### As a shopper,
+I want to select product quantity, color, and size,  
+so that I can customize my purchase before checkout.
+
+### As a user,
+I want to save products to my wishlist,  
+so that I can revisit them later.
+
+---
+
+## 🛒 Cart & Checkout
+
+### As a customer,
+I want to add products to my bag/cart,  
+so that I can purchase multiple items together.
+
+### As a user,
+I want to update quantities or remove products from my cart,  
+so that I can manage my order easily.
+
+### As a shopper,
+I want a secure checkout process,  
+so that I can safely complete my purchase.
+
+### As a customer,
+I want to receive order confirmations and notifications,  
+so that I know my order was placed successfully.
+
+---
+
+## 👤 User Account
+
+### As a user,
+I want to create an account and log in securely,  
+so that I can manage my orders and personal information.
+
+### As a returning customer,
+I want to view my previous orders,  
+so that I can track purchases and reorder products easily.
+
+### As a customer,
+I want to update my shipping and billing details,  
+so that my checkout process is faster.
+
+---
+
+## ℹ️ About & Contact
+
+### As a visitor,
+I want to learn about PickPerfect’s mission and story,  
+so that I can trust the platform.
+
+### As a customer,
+I want to contact support through a form,  
+so that I can get assistance quickly.
+
+### As a business partner,
+I want to access company contact details and social links,  
+so that I can connect for collaborations.
+
+---
+
+# 🚀 Main Features
+
+## 🏠 Homepage
+
+- Hero carousel/banner slider
+- Featured products section
+- Top-selling products
+- Latest arrivals
+- Category highlights
+- Promotional offers and discounts
+- Newsletter subscription
+- Responsive product grid
+
+---
+
+## 🔍 Advanced Product Search
+
+Users can search products using:
+
+- Product name
+- Product description
+- SKU
+- Tags
+- Keywords
+- Recipient
+- Occasion
+
+---
+
+### 🛍️ Shopping Features
+- Browse 20+ product categories (mugs, puzzles, speakers, tea gift boxes, etc.)
+- Dynamic product filtering (New, Featured, Sale, Top-Rated)
+- Advanced search functionality
+- Product detail pages with ratings and reviews
+- Shopping cart with persistent storage
+- Real-time cart updates
+- Checkout with order confirmation
+
+---
+
+## ⚙️ Filtering & Sorting
+
+### Filters
+- Categories
+- Price range
+- Colors
+- Sizes
+- Occasion
+- Recipient
+- Availability
+
+### Sorting
+- Price low to high
+- Price high to low
+- Best selling
+- Highest rated
+- Newest products
+
+---
+
+## 🛍️ Product Features
+
+- Product image gallery
+- Product variants (size, color)
+- Quantity selector
+- SKU display
+- Stock availability
+- Ratings and reviews
+- Related products
+
+---
+
+### 🎨 UI/UX Components
+-  Interactive product carousels (Owl Carousel)
+-  Tabbed product navigation
+-  Responsive Bootstrap grid layouts
+-  Star rating system
+-  Sale discount badges
+-  Mobile-optimized design
+
+---
+
+## 🛒 Shopping Bag / Cart
+
+- Add to cart
+- Update quantities
+- Remove products
+- Cart subtotal and total
+- Shipping calculations
+- Responsive mini-cart
+
+---
+
+## 💳 Checkout System
+
+- Secure payment integration
+- Stripe payment support
+- Billing and shipping forms
+- Order summary
+- Validation and error handling
+- Success notifications
+
+---
+
+## 📦 Orders
+
+- Order history
+- Order confirmation page
+- Previous orders dashboard
+- Email for new order place
+---
+
+## 👤 User Authentication
+
+- User registration
+- Login/logout
+- Password reset
+- Profile management
+- Saved addresses
+- Email Confirmation for register
+
+---
+
+## 📞 Contact Us
+
+- Contact form
+- Customer support details
+- Social media links
+- Business inquiry support
+
+---
+
+### 📊 Admin Features
+- Product management (CRUD)
+- Category organization
+- Order tracking
+- User management
+- Sales analytics
+
+---
+
+# 📱 Responsive Design
+
+PickPerfect is fully optimized for:
+
+- Mobile devices
+- Tablets
+- Desktop screens
+
+The platform uses responsive layouts and modern UI components to ensure a seamless shopping experience across all devices.
+
+---
+
+# ⚡ Performance & UX Features
+
+- Fast-loading pages
+- Optimized images
+- Real-time notifications
+- SweetAlert2 alerts
+- Accessible forms and navigation
+- Interactive product cards
+- Loading indicators
+- SEO-friendly structure
+
+---
+
+# 🔐 Security Features
+
+- CSRF protection
+- Secure authentication
+- Secure payment handling
+- Form validation
+- Protected user data
+
+---
+
+# 🛠️ Technologies Used
+
+- Django
+- Bootstrap
+- JavaScript
+- HTML5
+- CSS3
+- Stripe Payments
+- PostgreSQL / SQLite
+- AWS S3 (optional media storage)
+
+---
+
+# 📊 Future Improvements
+
+- Product reviews & ratings
+- AI product recommendations
+- Multi-vendor support
+- Live chat support
+- Email notifications
+- Discount coupon system
+- Inventory analytics dashboard
+
+---
+
+# ✅ Conclusion
+
+PickPerfect aims to provide a modern, user-friendly, and scalable e-commerce solution that delivers excellent shopping experiences through advanced search, filtering, responsive design, and secure checkout functionality.
 
 ## 🛠️ Tech Stack
 
