@@ -621,7 +621,7 @@
                         <div class="col-5">
                             <div class="products-mini-img border-end h-100">
                                 {% if product.image %}
-                                    <img src="{{ product.image.url }}" class="img-fluid w-100" style="object-fit: cover; height: 230px !important;" alt="{{ product.name }}">
+                                    <img src="{{ product.image.url }}" class="img-fluid" style="object-fit: cover;" height="209px" width="171px"  alt="{{ product.name }}">
                                 {% else %}
                                     <img src="{% static 'img/no-image.jpg' %}" class="img-fluid w-100" alt="{{ product.name }}">
                                 {% endif %}
@@ -683,7 +683,7 @@ These customer favourites are perfect for gifting and every special occasion.</p
                         <div class="col-5">
                             <div class="products-mini-img border-end h-100">
                                 {% if product.image %}
-                                    <img src="{{ product.image.url }}" class="img-fluid w-100" style="object-fit: cover; height: 230px !important;" alt="{{ product.name }}">
+                                    <img src="{{ product.image.url }}" class="img-fluid" style="object-fit: cover;" height="209px" width="171px" alt="{{ product.name }}">
                                 {% else %}
                                     <img src="{% static 'img/no-image.jpg' %}" class="img-fluid w-100 h-100" alt="{{ product.name }}">
                                 {% endif %}
