@@ -23,9 +23,9 @@
                                 {% endwith %}
                             </div>
                             {% if product.image %}
-                            <img src="{{ product.image.url }}" class="img-fluid banner-img" alt="">
+                            <img src="{{ product.image.url }}" class="img-fluid" height="169px" width="145px" alt="">
                             {% else %}
-                            <img src="{% static 'img/no-image.jpg' %}"  class="img-fluid banner-img" alt="">
+                            <img src="{% static 'img/no-image.jpg' %}"  class="img-fluid" height="169px" width="145px" alt="">
                             {% endif %}
                         </a>
                     </div>
@@ -62,13 +62,13 @@
                                 {% endif %}
                             {% endfor %}
                             <input type="range" class="form-range w-100" id="rangeInput" name="max_price" min="0" max="500"
-                                value="{{ request.GET.max_price|default:'500' }}" oninput="amount.value=rangeInput.value">
+                                value="{{ request.GET.max_price|default:'500' }}" oninput="amount.value=rangeInput.value" aria-label="Maximum Price">
                             <output id="amount" name="amount" for="rangeInput">{{ request.GET.max_price|default:'500' }}</output>
                             <button type="submit" class="btn btn-primary mt-2 w-100">Apply Price Filter</button>
                         </form>
                     </div>
                     <div class="position-relative">
-                        <img src="{% static 'img/product-banner-2.jpg' %}" class="img-fluid w-100 rounded" alt="Image">
+                        <img src="{% static 'img/product-banner-2.jpg' %}" class="img-fluid w-100 rounded" height="205px" width="306px" alt="Sale Banner">
                         <div class="text-center position-absolute d-flex flex-column align-items-center justify-content-center rounded p-4"
                             style="width: 100%; height: 100%; top: 0; right: 0; background: rgba(242, 139, 0, 0.3);">
                             <p class="display-6 text-primary">SALE</p>
