@@ -82,10 +82,10 @@
                             {% for item in bag_items %}
                                 <tr class="text-center">
                                     <th class="text-start py-4" style="width: 140px;">
-                                        <a href="{% url 'product_detail' item.product.id %}">
+                                        <a href="{% url 'product_detail' item.product.id %}" aria-label="View details for {{ item.product.name }}">
                                             {% if item.product.image %}
                                             <img class="w-50" src="{{ item.product.image.url }}"
-                                                alt="{{ product.name }}">
+                                                alt="{{ product.name }}" height="80px" width="70px">
                                             {% else %}
                                             <img class="w-50" src="{% static 'img/no-image.jpg' %}"
                                                 alt="{{ product.name }}">
@@ -148,11 +148,11 @@
                     <div class="row g-4 text-center align-items-center justify-content-center border-bottom py-2">
                         <div class="col-12">
                             <div class="form-check text-start my-2">
-                                <label class="form-check-label" for="Delivery-1">Payment by Card</label>
+                                
                                 <fieldset class="px-3">
-                                    <legend class="fieldset-label small text-black px-2 w-auto"> </legend>
+                                    <label class="form-check-label" for="card-element">Payment by Card</label>
                                     <!-- A Stripe card element will go here -->
-                                    <div class="mb-3" id="card-element"></div>
+                                    <div class="mb-3" id="card-element" aria-describedby="card-errors"></div>
                                     <!-- Used to display form errors -->
                                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
                                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
