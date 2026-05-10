@@ -621,9 +621,9 @@
                         <div class="col-5">
                             <div class="products-mini-img border-end h-100">
                                 {% if product.image %}
-                                    <img src="{{ product.image.url }}" class="img-fluid" style="object-fit: cover;" height="209px" width="171px"  alt="{{ product.name }}">
+                                    <img src="{{ product.image.url }}"  style="object-fit: cover;" height="209px" width="171px"  alt="{{ product.name }}">
                                 {% else %}
-                                    <img src="{% static 'img/no-image.jpg' %}" class="img-fluid w-100" alt="{{ product.name }}">
+                                    <img src="{% static 'img/no-image.jpg' %}"  alt="{{ product.name }}">
                                 {% endif %}
                                 <div class="products-mini-icon rounded-circle bg-primary">
                                     <a href="{% url 'product_detail' product.id %}" aria-label="View Deatails for {{ product.name }}"><i class="fa fa-eye fa-1x text-white"></i></a>
@@ -683,9 +683,9 @@ These customer favourites are perfect for gifting and every special occasion.</p
                         <div class="col-5">
                             <div class="products-mini-img border-end h-100">
                                 {% if product.image %}
-                                    <img src="{{ product.image.url }}" class="img-fluid" style="object-fit: cover;" height="209px" width="171px" alt="{{ product.name }}">
+                                    <img src="{{ product.image.url }}"  style="object-fit: cover;" height="209px" width="171px" alt="{{ product.name }}">
                                 {% else %}
-                                    <img src="{% static 'img/no-image.jpg' %}" class="img-fluid w-100 h-100" alt="{{ product.name }}">
+                                    <img src="{% static 'img/no-image.jpg' %}"  alt="{{ product.name }}">
                                 {% endif %}
                                 <div class="products-mini-icon rounded-circle bg-primary">
                                     <a href="{% url 'product_detail' product.id %}" aria-label="View Deatails for {{ product.name }}"><i class="fa fa-eye fa-1x text-white"></i></a>
