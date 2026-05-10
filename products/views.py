@@ -68,7 +68,11 @@ def all_products(request):
         products = products.order_by('id')
     # else default, no order_by
     
-            # Paginate products - 15 per page
+    # Check if no products found after filtering
+    if not products.exists():
+        messages.info(request, "No products found matching your search criteria.")
+    
+    # Paginate products - 15 per page
     paginator = Paginator(products, 15)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
