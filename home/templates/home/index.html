@@ -568,7 +568,7 @@
                                         style="background: rgba(255, 255, 255, 0.5);">
                                         <p class="display-5 text-primary fs-1 fw-bold">{{ product.name }}<br> <span>{{product.sku}}</span></p>
                                         
-                                        <p class="fs-4 text-muted">{{currency}}{{ product.price|floatformat:"2" }}</p>
+                                        <p class="fs-4 text-dark">{{currency}}{{ product.price|floatformat:"2" }}</p>
 
                                         <a href="{% url 'product_detail' product.id %}" class="btn btn-primary rounded-pill align-self-start py-2 px-4">Shop Now</a>
                                     </div>
