@@ -190,7 +190,7 @@
                                                     <a href="#" class="d-block mb-2">{{ product.category.friendly_name }}</a>
                                                     <a href="{% url 'product_detail' product.id %}" class="d-block h4">{{ product.name }} <br> {{product.sku}}</a>
                                                     {% if product.get_sale_percentage %}
-                                                        <h5 class="text-danger text-decoration-line-through mb-1">{{currency}}{{ product.price|floatformat:"2" }}</h5>
+                                                        <span class="text-danger text-decoration-line-through mb-1 fs-5">{{currency}}{{ product.price|floatformat:"2" }}</span>
                                                         <span class="text-primary fs-5">{{currency}}{{ product.get_discounted_price|floatformat:"2" }}</span>
                                                     {% else %}
                                                         <span class="text-primary fs-5">{{currency}}{{ product.price|floatformat:"2" }}</span>

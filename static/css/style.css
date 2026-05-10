@@ -286,6 +286,9 @@
 .cart-image{
     height:100px !important; 
 }
+.header-carousel .owl-item .carousel-img img {
+    width: auto;
+}
 /* ------------------------------- bootstrap toasts */
 
 .message-container {
