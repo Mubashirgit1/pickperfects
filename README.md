@@ -81,17 +81,7 @@ The platform bridges the gap between gift-givers and recipients with an intuitiv
 
 ---
 
-# PickPerfect – E-commerce Website
-
-## 📌 Overview
-
-PickPerfect is a modern e-commerce platform designed to provide users with a fast, responsive, and seamless online shopping experience. Users can browse products, search intelligently, filter by categories, price, tags, occasions, and recipients, save favorite items, manage orders, and complete secure checkouts efficiently.
-
-The platform focuses on usability, accessibility, performance, and responsive design across all devices.
-
----
-
-# 🎯 User Experience (UX)
+## 🎯 User Experience (UX)
 
 ## Initial Discussion
 
@@ -101,7 +91,7 @@ so that I can quickly find the best items for my needs and revisit them later wi
 
 ---
 
-# 👤 User Goals
+### 👤 User Goals
 
 - Quickly search and compare products by category, keyword, SKU, price, recipient, or occasion
 - Save favorite products for future purchases
@@ -113,9 +103,9 @@ so that I can quickly find the best items for my needs and revisit them later wi
 
 ---
 
-# 🧾 User Stories
+## 🧾 User Stories
 
-## 🔍 Product Search & Browsing
+### 🔍 Product Search & Browsing
 
 ### As a customer,
 I want to search products by name, SKU, or keywords,  
@@ -201,7 +191,7 @@ so that I can connect for collaborations.
 
 # 🚀 Main Features
 
-## 🏠 Homepage
+### 🏠 Homepage
 
 - Hero carousel/banner slider
 - Featured products section
@@ -214,7 +204,7 @@ so that I can connect for collaborations.
 
 ---
 
-## 🔍 Advanced Product Search
+### 🔍 Advanced Product Search
 
 Users can search products using:
 
@@ -259,7 +249,7 @@ Users can search products using:
 
 ---
 
-## 🛍️ Product Features
+### 🛍️ Product Features
 
 - Product image gallery
 - Product variants (size, color)
@@ -281,7 +271,7 @@ Users can search products using:
 
 ---
 
-## 🛒 Shopping Bag / Cart
+### 🛒 Shopping Bag / Cart
 
 - Add to cart
 - Update quantities
@@ -292,7 +282,7 @@ Users can search products using:
 
 ---
 
-## 💳 Checkout System
+### 💳 Checkout System
 
 - Secure payment integration
 - Stripe payment support
@@ -303,7 +293,7 @@ Users can search products using:
 
 ---
 
-## 📦 Orders
+### 📦 Orders
 
 - Order history
 - Order confirmation page
@@ -311,7 +301,7 @@ Users can search products using:
 - Email for new order place
 ---
 
-## 👤 User Authentication
+### 👤 User Authentication
 
 - User registration
 - Login/logout
@@ -322,7 +312,7 @@ Users can search products using:
 
 ---
 
-## 📞 Contact Us
+### 📞 Contact Us
 
 - Contact form
 - Customer support details
@@ -340,7 +330,7 @@ Users can search products using:
 
 ---
 
-# 📱 Responsive Design
+### 📱 Responsive Design
 
 PickPerfect is fully optimized for:
 
@@ -352,7 +342,7 @@ The platform uses responsive layouts and modern UI components to ensure a seamle
 
 ---
 
-# ⚡ Performance & UX Features
+### ⚡ Performance & UX Features
 
 - Fast-loading pages
 - Optimized images
@@ -365,7 +355,7 @@ The platform uses responsive layouts and modern UI components to ensure a seamle
 
 ---
 
-# 🔐 Security Features
+### 🔐 Security Features
 
 - CSRF protection
 - Secure authentication
@@ -375,7 +365,7 @@ The platform uses responsive layouts and modern UI components to ensure a seamle
 
 ---
 
-# 🛠️ Technologies Used
+### 🛠️ Technologies Used
 
 - Django
 - Bootstrap
@@ -388,7 +378,7 @@ The platform uses responsive layouts and modern UI components to ensure a seamle
 
 ---
 
-# 📊 Future Improvements
+### 📊 Future Improvements
 
 - Product reviews & ratings
 - AI product recommendations
@@ -400,7 +390,7 @@ The platform uses responsive layouts and modern UI components to ensure a seamle
 
 ---
 
-# ✅ Conclusion
+### ✅ Conclusion
 
 PickPerfect aims to provide a modern, user-friendly, and scalable e-commerce solution that delivers excellent shopping experiences through advanced search, filtering, responsive design, and secure checkout functionality.
 
