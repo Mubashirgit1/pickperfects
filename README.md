@@ -26,62 +26,75 @@ Pick Perfect is a full-featured eCommerce platform designed to help users find t
 
 ## CONTENTS
 
+## CONTENTS
+
 - [User Experience](#user-experience-ux)
+  - [Initial Discussion](#initial-discussion)
+  - [User Goals](#-user-goals)
+  - [User Stories](#-user-stories)
+    - [Product Search & Browsing](#-product-search--browsing)
+    - [Product Management](#-product-management)
+    - [Cart & Checkout](#-cart--checkout)
+    - [User Account](#-user-account)
+    - [About & Contact](#️-about--contact)
 
-  - [User Stories](#user-stories)
+- [Main Features](#-main-features)
+  - [Homepage](#-homepage)
+  - [Advanced Product Search](#-advanced-product-search)
+  - [Shopping Features](#-shopping-features)
+  - [Filtering & Sorting](#️-filtering--sorting)
+  - [Product Features](#-product-features)
+  - [UI/UX Components](#-uiux-components)
+  - [Shopping Bag / Cart](#-shopping-bag--cart)
+  - [Checkout System](#-checkout-system)
+  - [Orders](#-orders)
+  - [User Authentication](#-user-authentication)
+  - [Contact Us](#-contact-us)
+  - [Admin Features](#-admin-features)
+  - [Responsive Design](#-responsive-design)
+  - [Performance & UX Features](#-performance--ux-features)
+  - [Security Features](#-security-features)
+  - [Future Improvements](#-future-improvements)
+  - [Conclusion](#-conclusion)
 
-- [Design](#design)
+- [Tech Stack](#️-tech-stack)
+  - [Backend](#backend)
+  - [Frontend](#frontend)
+  - [Additional Tools](#additional-tools)
 
-  - [Colour Scheme](#colour-scheme)
-  - [Typography](#typography)
-  - [Imagery](#imagery)
-  - [Wireframes](#wireframes)
+- [Installation](#-installation)
+  - [Prerequisites](#prerequisites)
+  - [Step-by-Step Setup](#step-by-step-setup)
 
-- [Features](#features)
+- [Usage](#-usage)
+  - [For Users](#for-users)
+  - [For Admins](#for-admins)
 
-  - [General Features on Each Page](#general-features-on-each-page)
-  - [Future Implementations](#future-implementations)
-  - [Accessibility](#accessibility)
+- [Project Structure](#-project-structure)
 
-- [Technologies Used](#technologies-used)
+- [Key Components](#-key-components)
+  - [Models](#models)
+  - [Views](#views)
 
-  - [Languages Used](#languages-used)
-  - [Frameworks, Libraries & Programs Used](#frameworks-libraries--programs-used)
+- [API Endpoints](#-api-endpoints)
 
-- [Deployment & Local Development](#deployment--local-development)
+- [Future Enhancements](#-future-enhancements)
 
-  - [Deployment](#deployment)
-  - [Local Development](#local-development)
-    - [How to Fork](#how-to-fork)
-    - [How to Clone](#how-to-clone)
+- [Troubleshooting](#-troubleshooting)
 
-- [Testing](#testing)
-    [Testing File] (#testing)
-  - [Manual Testing](#manual-testing)
-  - [Automate Testing](#automate-testing)
-  
-- [Credits](#credits)
-  - [Code Used](#code-used)
-  - [Content](#content)
-  - [Media](#media)
-  - [Acknowledgments](#acknowledgments)
+- [Credits](#-credits)
+  - [Technologies & Libraries](#technologies--libraries)
+  - [Resources](#resources)
+  - [Contributors](#contributors)
+
+- [License](#-license)
+
+- [Contact & Support](#-contact--support)
+                    
 
 ---
 
-## 🎯 Overview
-
-**Pick Perfect** simplifies the gift-giving experience by providing:
-- A diverse catalog of 20+ product categories
-- Dynamic product discovery with intelligent filtering
-- Seamless shopping cart and checkout
-- Responsive design for mobile and desktop
-- Secure order management
-
-The platform bridges the gap between gift-givers and recipients with an intuitive, user-friendly interface.
-
----
-
-## 🎯 User Experience (UX)
+# User Experience (UX)
 
 ## Initial Discussion
 
@@ -91,7 +104,7 @@ so that I can quickly find the best items for my needs and revisit them later wi
 
 ---
 
-### 👤 User Goals
+## 👤 User Goals
 
 - Quickly search and compare products by category, keyword, SKU, price, recipient, or occasion
 - Save favorite products for future purchases
@@ -107,51 +120,51 @@ so that I can quickly find the best items for my needs and revisit them later wi
 
 ### 🔍 Product Search & Browsing
 
-### As a customer,
+#### As a customer,
 I want to search products by name, SKU, or keywords,  
 so that I can quickly find relevant products.
 
-### As a shopper,
+#### As a shopper,
 I want to filter products by category, price, recipient, occasion, color, and size,  
 so that I can narrow down products that match my preferences.
 
-### As a user,
+#### As a user,
 I want to sort products by price, popularity, rating, and newest arrivals,  
 so that I can easily compare products.
 
 ---
 
-## 🛍️ Product Management
+### 🛍️ Product Management
 
-### As a customer,
+#### As a customer,
 I want to view detailed product pages,  
 so that I can see product descriptions, images, prices, sizes, colors, and availability.
 
-### As a shopper,
+#### As a shopper,
 I want to select product quantity, color, and size,  
 so that I can customize my purchase before checkout.
 
-### As a user,
+#### As a user,
 I want to save products to my wishlist,  
 so that I can revisit them later.
 
 ---
 
-## 🛒 Cart & Checkout
+### 🛒 Cart & Checkout
 
-### As a customer,
+#### As a customer,
 I want to add products to my bag/cart,  
 so that I can purchase multiple items together.
 
-### As a user,
+#### As a user,
 I want to update quantities or remove products from my cart,  
 so that I can manage my order easily.
 
-### As a shopper,
+#### As a shopper,
 I want a secure checkout process,  
 so that I can safely complete my purchase.
 
-### As a customer,
+#### As a customer,
 I want to receive order confirmations and notifications,  
 so that I know my order was placed successfully.
 
@@ -362,19 +375,6 @@ The platform uses responsive layouts and modern UI components to ensure a seamle
 - Secure payment handling
 - Form validation
 - Protected user data
-
----
-
-### 🛠️ Technologies Used
-
-- Django
-- Bootstrap
-- JavaScript
-- HTML5
-- CSS3
-- Stripe Payments
-- PostgreSQL / SQLite
-- AWS S3 (optional media storage)
 
 ---
 
@@ -779,8 +779,8 @@ pip cache purge
 - GitHub Community
 
 ### Contributors
-- **Developer**: Your Name
-- **Designer**: Your Design Team
+- **Developer**: Muabshir Hussain
+- **Designer**: Mubashir Hussain
 - **Contributors**: Community Contributors
 
 ---
