@@ -46,7 +46,7 @@ Pick Perfect is a full-featured eCommerce platform designed to help users find t
   - [Footer](#Footer)
   - [Entity Relationship Diagram](#Entity-Relationship-Diagram)
   - [Flowchart](#flowchart)
-  
+
 - [Main Features](#-main-features)
   - [Homepage](#-homepage)
   - [Advanced Product Search](#-advanced-product-search)
@@ -88,6 +88,7 @@ Pick Perfect is a full-featured eCommerce platform designed to help users find t
 - [API Endpoints](#-api-endpoints)
 
 - [Future Enhancements](#-future-enhancements)
+
 
 - [Troubleshooting](#-troubleshooting)
 
@@ -892,6 +893,23 @@ POST /profile/update/              # Update profile
 
 ---
 
+## Testing
+
+Please refer to the [TESTING.md](/docs/testing.md)
+file for a detailed breakdown of all testing carried out for this project.
+
+### Automated and Manual Testing
+
+The Pick Perfect eCommerce website has been thoroughly tested to ensure all features work correctly, provide a smooth user experience, and handle both valid and invalid inputs effectively. Testing was carried out across different devices and browsers to ensure responsiveness, performance, and reliability.
+
+### Manual Testing
+
+Manual testing was performed to verify that all core functionalities behave as expected from a user’s perspective. This includes testing user registration and login, product browsing, adding items to the cart, updating quantities, checkout process, and order confirmation. Form validation was also checked to ensure proper error handling for invalid or missing inputs. In addition, navigation links, search functionality, and UI elements were tested to ensure a smooth and consistent user experience across the platform.
+
+### Automated Testing
+
+Automated testing was used to validate key backend logic and ensure system reliability. This includes testing API endpoints, authentication processes, database operations, and cart/order calculations. Automated tests help ensure that core functionalities remain stable during updates and future development.
+
 ## 🐛 Troubleshooting
 
 ### Issue: Static Files Not Loading
@@ -940,8 +958,6 @@ pip cache purge
 - https://www.pexels.com/
 - https://heroku.com
 - https://chatgpt.com/
-
-
 
 ### Contributors
 - **Developer**: Muabshir Hussain
