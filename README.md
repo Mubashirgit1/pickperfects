@@ -26,8 +26,6 @@ Pick Perfect is a full-featured eCommerce platform designed to help users find t
 
 ## CONTENTS
 
-## CONTENTS
-
 - [User Experience](#user-experience-ux)
   - [Initial Discussion](#initial-discussion)
   - [User Goals](#-user-goals)
@@ -38,6 +36,17 @@ Pick Perfect is a full-featured eCommerce platform designed to help users find t
     - [User Account](#-user-account)
     - [About & Contact](#️-about--contact)
 
+- [Design](#design)
+  - [Colour Scheme](#colour-scheme)
+  - [Typography](#typography)
+  - [Imagery](#imagery)
+  - [Wireframes](#wireframes)
+  - [Favicon](#favicon)
+  - [Navigation](#navigation)
+  - [Footer](#Footer)
+  - [Entity Relationship Diagram](#Entity-Relationship-Diagram)
+  - [Flowchart](#flowchart)
+  
 - [Main Features](#-main-features)
   - [Homepage](#-homepage)
   - [Advanced Product Search](#-advanced-product-search)
@@ -94,9 +103,9 @@ Pick Perfect is a full-featured eCommerce platform designed to help users find t
 
 ---
 
-# User Experience (UX)
+## User Experience (UX)
 
-## Initial Discussion
+### Initial Discussion
 
 As an online shopper,  
 I want to search, compare, and save products easily,  
@@ -104,7 +113,7 @@ so that I can quickly find the best items for my needs and revisit them later wi
 
 ---
 
-## 👤 User Goals
+### 👤 User Goals
 
 - Quickly search and compare products by category, keyword, SKU, price, recipient, or occasion
 - Save favorite products for future purchases
@@ -116,7 +125,7 @@ so that I can quickly find the best items for my needs and revisit them later wi
 
 ---
 
-## 🧾 User Stories
+### 🧾 User Stories
 
 ### 🔍 Product Search & Browsing
 
@@ -170,7 +179,7 @@ so that I know my order was placed successfully.
 
 ---
 
-## 👤 User Account
+### 👤 User Account
 
 ### As a user,
 I want to create an account and log in securely,  
@@ -186,7 +195,7 @@ so that my checkout process is faster.
 
 ---
 
-## ℹ️ About & Contact
+### ℹ️ About & Contact
 
 ### As a visitor,
 I want to learn about PickPerfect’s mission and story,  
@@ -202,7 +211,153 @@ so that I can connect for collaborations.
 
 ---
 
-# 🚀 Main Features
+## Design
+
+### Colour Scheme
+
+Here is the color scheme for the project:
+- **Scarlet Fire**: `#F92400`
+- **Carrot Orange**: `#E5901F`
+- **Apricot Cream**: `#E6C594`
+- **White Smoke**: `#F4F3F3`
+- **White**: `#FFFFFF`
+- **Iron Grey**: `#474747`
+ 
+![Pickperfect](docs/colorscheme/pickperfect.png)
+Resource
+https://coolors.co/user/palettes/6a02438c17faa8000f3973a8
+
+
+### Typography
+
+
+PickPerfect uses a system-optimized and web-safe font stack to ensure a consistent, readable, and fast-loading user interface across all devices and platforms.
+
+### Font Stack
+
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif,
+             "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+
+### Explanation of the stack:
+
+1. -apple-system & BlinkMacSystemFont → Use the native system font on macOS/iOS and Chrome/Chromium browsers.
+
+2. "Segoe UI" → Default system font for Windows.
+
+3. Roboto → Popular font for Android and Google platforms.
+
+4. "Helvetica Neue" & Arial → Standard web-safe fallback fonts for older systems.
+
+5. sans-serif → Generic fallback if none of the above are available.
+
+6. Emoji support: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" ensures emojis render properly across platforms.
+
+
+### Imagery
+
+PickPerfect uses a combination of custom designs and free stock images to create an attractive, user-friendly, and consistent interface.
+
+1. Hero & Homepage Images
+
+Main carousel Images:
+
+The main carousel images and hamper product visuals represent the overall style and identity of the website, showcasing gift collections in an attractive and engaging way to create a warm and premium shopping experience for users.
+
+2. Products Images
+
+All product images used on the website were sourced from free image platforms such as Unsplash, Pixabay, and Pexels to help complete the product catalogue. All images were optimized and resized using Bulk Resize Photos to improve website performance and maintain consistent image dimensions across the platform.
+
+3. Branding Assets
+
+Logo:
+
+The logo features bold typography in a carrot-orange shade, paired with a small shopping bag icon in a Scarlet Fire tone.
+
+Favicon:
+
+Designed in Canva for display in browser tabs and bookmarks.
+
+Purpose: Establish a strong, consistent brand identity throughout the app.
+
+4. Image Sources & Licensing
+
+Canva: For custom graphics, logos, and favicon.
+
+Unsplash: Free, royalty-free images used for gallery and hero visuals.
+
+5. Purpose & UX Benefits
+
+Enhance visual appeal and engagement.
+
+Provide users with a sense of travel inspiration and discovery.
+
+Ensure all assets are optimized for fast web performance.
+
+Maintain a consistent visual identity across all pages.
+
+
+### Wireframes
+
+🖌️ Wireframes & UI/UX Design
+
+The initial design and layout of this project were conceptualized using Balsamiq.
+These wireframes served as the foundation for the UI/UX structure, ensuring a clear visual direction before development began.
+
+📐 Tool used: [canva](https://www.canva.com/)
+
+🎯 Purpose: Define layout, content hierarchy, and user flow across key pages and components.
+
+
+**Home Page**
+![Pick Perfect Website Main Page](docs/wireframes/main-page.png)
+**Shop Page**
+![Pick Perfect Website Shop ](docs/wireframes/shop-page.png)
+**Shopping Cart**
+![Pick Perfect Website shopping cart](docs/wireframes/shopping-bag.png)
+**Checkout**
+![Pick Perfect Website Checkout](docs/wireframes/checkout.png)
+
+### Favicon
+
+- A favicon in the browser tab.
+
+  ![favicon](docs/favicon/favicon.ico)
+
+  - The navigation of the site at the top of every page. link to all pages each other click on logo back to home page.
+
+### Navigation
+
+![home-nav](docs/website/nav.png)
+
+- Navigation of All Other pages same have login register and Search, Categories and contact deatils.
+
+
+### 🧭 Footer
+
+Showing Address and Phone numbers:  
+
+`Address` · `Mail Us` · `Contact Us` · `Telephone` · `Register` · `pickperfect.com`
+
+Submit for newsLetter Cutomer Service Information and extras for customer satisfaction
+
+![Footer](docs/website/footer.png)
+
+---
+
+### Entity Relationship Diagram (ERD)
+
+The Entity Relationship Diagram (ERD) for this eCommerce website provides a clear visual representation of the database structure and relationships between different entities such as users, products, orders, categories, and payments. It helps illustrate how data is organized and connected within the system, ensuring better understanding of the backend architecture. The ERD is included in this repository to support developers in understanding data flow, maintaining consistency, and simplifying future enhancements or debugging of the database design.
+
+![ERD](docs/erd-diagram/diagram.png)
+
+### Flowchart
+
+The flowchart illustrates the overall workflow of the eCommerce system, showing how users interact with the platform from browsing products to placing orders and completing payments. It maps out each step of the process, including user registration/login, product selection, cart management, checkout, and order confirmation. This visual representation helps in understanding the system logic and user journey, making it easier to analyze, develop, and improve the application flow.
+
+![Flowchart](docs/flowchart/flow-chart.png)
+
+## 🚀 Main Features
 
 ### 🏠 Homepage
 
@@ -242,7 +397,7 @@ Users can search products using:
 
 ---
 
-## ⚙️ Filtering & Sorting
+### ⚙️ Filtering & Sorting
 
 ### Filters
 - Categories
@@ -777,6 +932,16 @@ pip cache purge
 - Bootstrap Documentation
 - Stack Overflow Community
 - GitHub Community
+- pixbay https://pixabay.com/
+- colors https://coolors.co/
+- bulkresizephotos https://bulkresizephotos.com/
+- aws amazon https://aws.amazon.com/s3
+- unsplash https://unsplash.com/
+- https://www.pexels.com/
+- https://heroku.com
+- https://chatgpt.com/
+
+
 
 ### Contributors
 - **Developer**: Muabshir Hussain
