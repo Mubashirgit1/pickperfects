@@ -29,6 +29,10 @@ BASE_DIR = SETTINGS_DIR.parent
 SECRET_KEY = 'django-insecure-g8v&h5u_y)4%!3^rq5@)%+)hkw7$64c6r_km&ckxf5nqp4qra^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+if os.path.isfile('env.py'):
+    import env
+
+# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
@@ -209,6 +213,7 @@ if 'USE_AWS' in os.environ:
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 else:
     STATIC_URL = '/static/'
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'static'),
     ]

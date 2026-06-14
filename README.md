@@ -89,6 +89,10 @@ Pick Perfect is a full-featured eCommerce platform designed to help users find t
 
 - [Future Enhancements](#-future-enhancements)
 
+- [Testing](#testing)
+    [Testing File] (#testing)
+  - [Manual Testing](#manual-testing)
+  - [Automate Testing](#automate-testing)
 
 - [Troubleshooting](#-troubleshooting)
 
@@ -96,7 +100,11 @@ Pick Perfect is a full-featured eCommerce platform designed to help users find t
   - [Technologies & Libraries](#technologies--libraries)
   - [Resources](#resources)
   - [Contributors](#contributors)
-
+  - [Code Used](#code-used)
+  - [Content](#content)
+  - [Media](#media)
+  - [Acknowledgments](#acknowledgments)
+  
 - [License](#-license)
 
 - [Contact & Support](#-contact--support)
